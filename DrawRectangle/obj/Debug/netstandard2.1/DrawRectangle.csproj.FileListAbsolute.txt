@@ -1,0 +1,8 @@
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.1\DrawRectangle.deps.json
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.1\DrawRectangle.dll
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.1\DrawRectangle.pdb
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.1\DrawRectangle.AssemblyInfoInputs.cache
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.1\DrawRectangle.AssemblyInfo.cs
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.1\DrawRectangle.csproj.CoreCompileInputs.cache
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.1\DrawRectangle.dll
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.1\DrawRectangle.pdb

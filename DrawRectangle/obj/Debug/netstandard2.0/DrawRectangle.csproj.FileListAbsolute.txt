@@ -1,0 +1,27 @@
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.deps.json
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.dll
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.pdb
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.AssemblyInfoInputs.cache
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.AssemblyInfo.cs
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.csproj.CoreCompileInputs.cache
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.dll
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.pdb
+E:\games(ne steam)\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.csprojAssemblyReference.cache
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.deps.json
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.dll
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.pdb
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.AssemblyInfoInputs.cache
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.AssemblyInfo.cs
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.csproj.CoreCompileInputs.cache
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.dll
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.pdb
+E:\stuff\j\projects\TrainingOOP\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.csprojAssemblyReference.cache
+E:\stuff\j\Alexa_proj\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.deps.json
+E:\stuff\j\Alexa_proj\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.dll
+E:\stuff\j\Alexa_proj\DrawRectangle\bin\Debug\netstandard2.0\DrawRectangle.pdb
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.AssemblyInfoInputs.cache
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.AssemblyInfo.cs
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.csproj.CoreCompileInputs.cache
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.dll
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.pdb
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Debug\netstandard2.0\DrawRectangle.csprojAssemblyReference.cache

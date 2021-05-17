@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "TyIy6mRhBwMbUQ3d7MSDbbN7NQBlYMhSqgyIaWvrVQ3X8E/EvtNYMrTBBTLWhuUZCi6tldcS7y5s2ta1LvMfag==",
+  "success": true,
+  "projectFilePath": "E:\\stuff\\j\\Alexa_proj\\DrawRectangle\\DrawRectangle.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nonam\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\nonam\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Alexa_proj.Additional_APIs.CoronaInfo">
+    <Position X="15.25" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Alexa_proj.Additional_APIs.CoronaInfo.GlobalInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\CoronaInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.CoronaInfo.CountryInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\CoronaInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAABAAA=</HashCode>
+      <FileName>Additional APIs\CoronaInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.ConsoleSpinner">
+    <Position X="9.25" Y="9" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Alexa_proj.Additional_APIs.ConsoleSpinner.AnimCanceletionToken" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\DoggoCheck.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAACAgAAAIAIAAEAAQAAAAAAAAA=</HashCode>
+      <FileName>Additional APIs\DoggoCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.DoggoInfo">
+    <Position X="8.75" Y="7" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Alexa_proj.Additional_APIs.DoggoInfo.Weight" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\DoggoInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.DoggoInfo.Height" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\DoggoInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.DoggoInfo.Breed" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\DoggoInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAQAQAAAAAAAAAAIAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Additional APIs\DoggoInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.WeatherInfo">
+    <Position X="13.25" Y="6.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Coord" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Weather" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Main" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Wind" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Clouds" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Sys" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAABAAAYEAABBEAAAAAAQAAABABgQ=</HashCode>
+      <FileName>Additional APIs\WeatherInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Animation">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAEAAQAAACAAAAAAAAAAAEAQAA=</HashCode>
+      <FileName>Animation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Menu">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAIAAAAAAAAAAgAAEAAAAAAAEAAAAABAAQAAAIAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="MainWindow" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Alexa_proj.StartUp">
+    <Position X="1.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAwAEgAAAAIACAAAQCAQCAAAAABAACAAA=</HashCode>
+      <FileName>StartUp.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_currentMenu" />
+      <Property Name="CurrentMenu" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DrawRectangle.ConsoleRectangle">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

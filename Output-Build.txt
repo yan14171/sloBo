@@ -1,0 +1,10 @@
+﻿Build started...
+1>------ Build started: Project: Alexa_proj, Configuration: Debug Any CPU ------
+1>E:\stuff\j\Alexa_proj\Alexa_proj\Menu Executables\ResultAnaliser.cs(36,55,36,67): warning CS8604: Possible null reference argument for parameter 'assemblyName' in 'ObjectHandle? Activator.CreateInstance(string assemblyName, string typeName)'.
+1>E:\stuff\j\Alexa_proj\Alexa_proj\Menu Executables\ResultAnaliser.cs(36,30,36,89): warning CS8600: Converting null literal or possible null value to non-nullable type.
+1>E:\stuff\j\Alexa_proj\Alexa_proj\Menu Executables\ResultAnaliser.cs(37,47,37,53): warning CS8602: Dereference of a possibly null reference.
+1>E:\stuff\j\Alexa_proj\Alexa_proj\Menu Executables\ResultAnaliser.cs(37,32,37,62): warning CS8600: Converting null literal or possible null value to non-nullable type.
+1>E:\stuff\j\Alexa_proj\Alexa_proj\Menu Executables\ResultAnaliser.cs(40,25,40,33): warning CS8604: Possible null reference argument for parameter 'key' in 'void Dictionary<ApiExecutable, List<string>>.Add(ApiExecutable key, List<string> value)'.
+1>Alexa_proj -> E:\stuff\j\Alexa_proj\Alexa_proj\bin\Debug\net5.0-windows7.0\Alexa_proj.dll
+1>Done building project "Alexa_proj.csproj".
+========== Build: 1 succeeded, 0 failed, 1 up-to-date, 0 skipped ==========
