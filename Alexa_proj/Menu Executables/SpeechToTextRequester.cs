@@ -84,8 +84,8 @@ namespace Alexa_proj
             DetailedResponse<RecognitionJob> WatsonResponse;
             while (true)
             {
-                WatsonResponse = await Task.Run(() => stt.CheckJob(ConcreteId));
-                if (WatsonResponse.Result.Status == "completed") break;
+                WatsonResponse = stt.CheckJob(ConcreteId);
+                if (WatsonResponse.Headers == null) break;
             }
             var LastJobResults = WatsonResponse.Result.Results[0].Results;
             var RecognitionResults = new List<string>();
@@ -104,8 +104,6 @@ namespace Alexa_proj
 
                 writer.Write(JsonConvert.SerializeObject(RecognitionResults));
                 writer.Flush();
-
-
             }
         }
 

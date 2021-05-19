@@ -32,6 +32,11 @@ namespace Alexa_proj.Data_Control.Models
         /// </summary>
         [Column("executable_function")]
         public Function ExecutableFunction { get; set; }
+
+        public virtual void Execute()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 
 #nullable disable
