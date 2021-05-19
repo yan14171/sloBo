@@ -43,7 +43,11 @@ namespace Alexa_proj
         public async override void Execute()
         {
             Animation.StartAnimation();
+
+            await SearchEngineSetup();
+
             await Recognise( @"Resources/Files/RecordingFile (8).wav");
+
             StartUp.HardIterate();
         }
 
@@ -53,19 +57,21 @@ namespace Alexa_proj
 
             using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
             {
-                keywords =
-                unitOfWork.Executables
-                .GetStaticExecutables()
+                var Executables =
+                    await
+                (unitOfWork.Executables as ExecutableRepository)
+                .GetStaticExecutablesAsync();
+
+                keywords = Executables
                 .SelectMany(n => n.Keywords.Select(m => m.KeywordValue))
                 .ToList();
             }
-
 
                 var result = await Task.Run(() => stt.CreateJob
               (
           audio: new MemoryStream(File.ReadAllBytes(filename)),
           contentType: $"audio/{fileType}",
-          keywords: AvailableFeatures.Values.SelectMany(n => n).ToList(),
+          keywords: keywords,
           model: "en-US_NarrowbandModel",
           keywordsThreshold: 0.2F,
           speechDetectorSensitivity: 0.8F,
@@ -81,13 +87,13 @@ namespace Alexa_proj
                 if (WatsonResponse.Result.Status == "completed") break;
             }
             var LastJobResults = WatsonResponse.Result.Results[0].Results;
-            var RecognitionResults = new Dictionary<string, List<KeywordResult>>();
+            var RecognitionResults = new List<string>();
             foreach (var item in LastJobResults)
             {
                 if (item.KeywordsResult.Count > 0)
                     foreach (var Keyw in item.KeywordsResult)
                     {
-                        RecognitionResults.Add(Keyw.Key, Keyw.Value);
+                        RecognitionResults.Add(Keyw.Key);
                     }
             }
 
@@ -100,14 +106,9 @@ namespace Alexa_proj
 
 
             }
-            using (var writer = new StreamWriter(@"Resources/Text/Functions.txt"))
-            {
-                writer.Write(JsonConvert.SerializeObject(AvailableFeatures));
-                writer.Flush();
-            }
         }
 
-        private static List<ExecutableModel> SearchEngineSetup()
+        private async static Task<List<ExecutableModel>> SearchEngineSetup()
         {
             var AvailableFeatures = new List<ExecutableModel>();
             var WeatherKeywords = new List<string>(new string[] {
@@ -173,7 +174,7 @@ namespace Alexa_proj
             };
             ExecutableModel Coronamodel = new ExecutableModel()
             {
-                ExecutableName = "WeatherExecutable",
+                ExecutableName = "CoronaExecutable",
 
                 Keywords = new List<Keyword>(),
 
@@ -187,7 +188,7 @@ namespace Alexa_proj
             };
             ExecutableModel Doggomodel = new ExecutableModel()
             {
-                ExecutableName = "WeatherExecutable",
+                ExecutableName = "DoggoExecutable",
 
                 Keywords = new List<Keyword>(),
 
@@ -224,7 +225,7 @@ namespace Alexa_proj
             {
                 unitOfWork.Executables.AddRange(returnedExecutables);
 
-                unitOfWork.Complete();
+                await unitOfWork.CompleteAsync();
 
                 return unitOfWork.Executables as List<ExecutableModel>;
             }

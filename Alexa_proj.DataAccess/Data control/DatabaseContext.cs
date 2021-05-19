@@ -45,7 +45,6 @@ namespace Alexa_proj.Data_Control
 
             var optionsBuilder = new DbContextOptionsBuilder<FunctionalContext>();
             optionsBuilder
-                .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddConsole()))
                 .UseSqlServer(configuration["ConnectionStrings:DefaultConnection"]);
 
             return new FunctionalContext(optionsBuilder.Options);
