@@ -1,1 +1,1 @@
-{"corona":[{"normalized_text":"corona","start_time":1.75,"end_time":2.41,"confidence":0.97}],"corona info":[{"normalized_text":"corona info","start_time":1.75,"end_time":3.06,"confidence":0.902}]}
+["corona","corona info"]

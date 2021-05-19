@@ -44,7 +44,8 @@ namespace Alexa_proj
         {
             Animation.StartAnimation();
 
-            await SearchEngineSetup();
+            //Uncomment to add new features
+            //await SearchEngineSetup();
 
             await Recognise( @"Resources/Files/RecordingFile (8).wav");
 

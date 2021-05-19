@@ -35,6 +35,7 @@ namespace Alexa_proj.Repositories
                 await
                 _functionalContext.Executables
                  .Include(n => n.ExecutableFunction)
+                 .Include(n => n.Keywords)
                  .Where(n => n.ExecutableFunction.FunctionEndpoint != null)
                  .ToListAsync();
 
