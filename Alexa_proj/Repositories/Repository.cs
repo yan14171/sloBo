@@ -23,9 +23,18 @@ namespace Alexa_proj.Repositories
             return _entities.Find(id);
         }
 
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _entities.FindAsync(id);
+        }
+
         public IEnumerable<T> GetAll()
         {
             return _entities.ToList();
+        }
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            return await _entities.ToListAsync();
         }
 
         public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
@@ -38,9 +47,19 @@ namespace Alexa_proj.Repositories
             _entities.Add(entity);
         }
 
+        public async Task AddAsync(T entity)
+        {
+           await _entities.AddAsync(entity);
+        }
+
         public void AddRange(IEnumerable<T> entities)
         {
             _entities.AddRange(entities);
+        }
+
+        public async Task AddRangeAsync(IEnumerable<T> entities)
+        {
+            await _entities.AddRangeAsync(entities);
         }
 
         public void Remove(T entity)

@@ -2,6 +2,9 @@
 //#define Mine
 
 using Alexa_proj.Additional_APIs;
+using Alexa_proj.Data_Control;
+using Alexa_proj.Data_Control.Models;
+using Alexa_proj.Repositories;
 using DrawRectangle;
 using IBM.Cloud.SDK.Core.Authentication.Iam;
 using IBM.Cloud.SDK.Core.Http;
@@ -12,6 +15,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Alexa_proj
 {
@@ -39,29 +43,35 @@ namespace Alexa_proj
         public async override void Execute()
         {
             Animation.StartAnimation();
-           await Recognise(SearchEngineSetup(),@"Resources/Files/RecordingFile (8).wav");
+            await Recognise( @"Resources/Files/RecordingFile (8).wav");
             StartUp.HardIterate();
         }
 
-        public static async Task Recognise
-            (
-            Dictionary<ApiExecutable,
-            List<string>> AvailableFeatures,
-            string filename = @"Resources/Files/RecordingFile.wav",
-            string fileType = "wav"
-            )
+        public static async Task Recognise( string filename = @"Resources/Files/RecordingFile.wav", string fileType = "wav" )
         {
-            var result =await Task.Run(()=> stt.CreateJob
-         (
-     audio: new MemoryStream(File.ReadAllBytes(filename)),
-     contentType: $"audio/{fileType}",
-     keywords: AvailableFeatures.Values.SelectMany(n => n).ToList(),
-     model: "en-US_NarrowbandModel",
-     keywordsThreshold: 0.2F,
-     speechDetectorSensitivity: 0.8F,
-     backgroundAudioSuppression: 0.5F,
-     timestamps: true
-     ));
+            List<string> keywords = new List<string>();
+
+            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
+            {
+                keywords =
+                unitOfWork.Executables
+                .GetStaticExecutables()
+                .SelectMany(n => n.Keywords.Select(m => m.KeywordValue))
+                .ToList();
+            }
+
+
+                var result = await Task.Run(() => stt.CreateJob
+              (
+          audio: new MemoryStream(File.ReadAllBytes(filename)),
+          contentType: $"audio/{fileType}",
+          keywords: AvailableFeatures.Values.SelectMany(n => n).ToList(),
+          model: "en-US_NarrowbandModel",
+          keywordsThreshold: 0.2F,
+          speechDetectorSensitivity: 0.8F,
+          backgroundAudioSuppression: 0.5F,
+          timestamps: true
+          ));
             string ConcreteId = result.Result.Id;
 
             DetailedResponse<RecognitionJob> WatsonResponse;
@@ -97,44 +107,127 @@ namespace Alexa_proj
             }
         }
 
-        private static Dictionary<ApiExecutable, List<string>> SearchEngineSetup()
+        private static List<ExecutableModel> SearchEngineSetup()
         {
-            var AvailableFeatures = new Dictionary<ApiExecutable, List<string>>();
-            AvailableFeatures.Add(
+            var AvailableFeatures = new List<ExecutableModel>();
+            var WeatherKeywords = new List<string>(new string[] {
+                "what's the weather",
+                "window",
+                "what's outside",
+                "what's outside the window",
+                "outside",
+                "what is outside",
+                "weather",
+                "temperature",
+                "how hot",
+                "how warm",
+                "how cold",
+                "warm",
+                "cold"
+            });
+            var CoronaKeywords = new List<string>(new string[] {
+                "corona info",
+                "corona",
+                "virus news",
+                "news about the virus",
+                "news about corona virus",
+                "situation on corona",
+                "covid stats",
+                "covid patients",
+                "number of covid patients",
+                "covid statistic",
+                "covid patients",
+                "covid",
+                "patients",
+                "sick"
+            });
+            var DoggoKeywords = new List<string>(new string[] {
+                "play doggo",
+                "doggo",
+                "dog game",
+                "that dog game",
+                "roll a dog",
+                "roll",
+                "dog",
+                "dogo",
+                "give me a dog",
+                "doggo",
+                "doggo box",
+                "doggobox",
+                "open the doggo box"
+            });
 
-                new WeatherCheck(),
+            ExecutableModel Weathermodel = new ExecutableModel()
+            {
+                ExecutableName = "WeatherExecutable",
 
-                     new List<string>(new string[] {
-                          "what's the weather", "window", "what's outside", "what's outside the window", "outside","what is outside",
-                         "weather", "temperature",  "how hot", "how warm", "how cold", "warm", "cold"
-                     })
+                Keywords = new List<Keyword>(),
 
-                     );
+                ExecutableFunction = new Function()
+                {
+                    FunctionEndpoint = $"http://api.openweathermap.org/data/2.5/weather?q=Kyiw&appid={API_KEY}",
+                    FunctionName = "Alexa_proj.Additional_APIs.WeatherCheck",
+                    FunctionResult = new FunctionResult() { ResultValue = string.Empty }
+                },
 
-            AvailableFeatures.Add(
+            };
+            ExecutableModel Coronamodel = new ExecutableModel()
+            {
+                ExecutableName = "WeatherExecutable",
 
-               new CoronaCheck(),
+                Keywords = new List<Keyword>(),
 
-                    new List<string>(new string[] {
-                         "corona info", "corona", "virus news", "news about the virus","news about corona virus",
-                         "situation on corona", "covid stats", "covid patients", "number of covid patients", "covid statistic",
-                         "covid patients", "covid","patients", "sick"
-                    })
+                ExecutableFunction = new Function()
+                {
+                    FunctionEndpoint = $"https://api.covid19api.com/summary",
+                    FunctionName = "Alexa_proj.Additional_APIs.CoronaCheck",
+                    FunctionResult = new FunctionResult() { ResultValue = string.Empty }
+                },
 
-                    );
+            };
+            ExecutableModel Doggomodel = new ExecutableModel()
+            {
+                ExecutableName = "WeatherExecutable",
 
+                Keywords = new List<Keyword>(),
 
-            AvailableFeatures.Add(
+                ExecutableFunction = new Function()
+                {
+                    FunctionEndpoint = "https://api.thedogapi.com/v1/images/search",
+                    FunctionName = "Alexa_proj.Additional_APIs.DoggoCheck",
+                    FunctionResult = new FunctionResult() { ResultValue = string.Empty }
+                },
 
-               new DoggoCheck(),
+            };
 
-                    new List<string>(new string[] {
-                         "play doggo",  "doggo", "dog game", "that dog game", "roll a dog","roll","dog","dogo",
-                         "give me a dog", "doggo", "doggo box","doggobox", "open the doggo box"
-                    })
+            foreach (var item in WeatherKeywords)
+            {
+                Weathermodel.Keywords.Add(new Keyword { KeywordValue = item });
+            }
+            foreach (var item in CoronaKeywords)
+            {
+                Coronamodel.Keywords.Add(new Keyword { KeywordValue = item });
+            }
+            foreach (var item in DoggoKeywords)
+            {
+                Doggomodel.Keywords.Add(new Keyword { KeywordValue = item });
+            }
 
-                    );
-            return AvailableFeatures;
+            var returnedExecutables = new List<ExecutableModel>()
+            {
+                Weathermodel,
+                Coronamodel,
+                Doggomodel
+            };
+
+            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
+            {
+                unitOfWork.Executables.AddRange(returnedExecutables);
+
+                unitOfWork.Complete();
+
+                return unitOfWork.Executables as List<ExecutableModel>;
+            }
         }
     }
 }

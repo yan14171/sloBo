@@ -6,7 +6,7 @@ namespace Alexa_proj.DataAccess.Repositories
 {
     public interface IUnitOfWork : IDisposable
     {
-        IExecutableRepository Customers { get; }
+        IExecutableRepository Executables { get; }
 
         int Complete();
     }

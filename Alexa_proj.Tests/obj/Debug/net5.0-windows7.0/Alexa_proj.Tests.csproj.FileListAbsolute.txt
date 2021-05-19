@@ -159,3 +159,5 @@ E:\stuff\j\Alexa_proj\Alexa_proj.Tests\obj\Debug\net5.0-windows7.0\Alexa_proj.Te
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\obj\Debug\net5.0-windows7.0\ref\Alexa_proj.Tests.dll
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\obj\Debug\net5.0-windows7.0\Alexa_proj.Tests.pdb
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\obj\Debug\net5.0-windows7.0\Alexa_proj.Tests.genruntimeconfig.cache
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Debug\net5.0-windows7.0\Alexa_proj.DataAccess.dll
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Debug\net5.0-windows7.0\Alexa_proj.DataAccess.pdb

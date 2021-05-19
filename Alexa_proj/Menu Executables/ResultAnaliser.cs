@@ -15,46 +15,15 @@ namespace Alexa_proj
         public async override void Execute()
         {
 
-            Dictionary<ApiExecutable, List<string>> AvailableFunctions = new Dictionary<ApiExecutable, List<string>>();
-            Dictionary<string, List<KeywordResult>> Recognised;
 
-            ApiExecutable Function;
-            string[] ArrayOfFunctions;
 
-            var RecognisedJson = await File.ReadAllTextAsync(@"Resources/Text/RecordingResults.txt");
-            Recognised = JsonConvert.DeserializeObject<Dictionary<string, List<KeywordResult>>>(RecognisedJson);
-            
 
-            var FunctionsJson = await File.ReadAllTextAsync(@"Resources/Text/Functions.txt");
-            var FunctionsDict = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(FunctionsJson);
-
-            for (int i = 0; i < FunctionsDict.Count; i++)
-            {
-                ArrayOfFunctions = FunctionsDict.Keys.ToArray<string>();
-                Function = GetTypeByAssemblyName<ApiExecutable>(FunctionsDict.Keys.ToArray()[i]);
-                AvailableFunctions.Add
-                    (
-                    Function,
-                    FunctionsDict[ArrayOfFunctions[i]]
-                    );
-            }
-            var AnalysisResult = from keyv in AvailableFunctions
-                                 from v in keyv.Value
-                                 where Recognised.Keys.Contains(v)
-                                 select new { Info = Recognised.GetValueOrDefault(v), Does = keyv.Key };
+            //Analising before this point
 
             Animation.StopAnimation();
 
+            //has to execute all functions here!!
 
-
-            //has to execute all functions!!
-
-
-            if (AnalysisResult.Count() == 0)
-                new EmptyCheck().Execute();
-            else
-                foreach (var item in AnalysisResult.Take(1))
-                    item.Does.Execute();
 
         }         
 
