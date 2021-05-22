@@ -1,5 +1,6 @@
 ﻿using Alexa_proj.Additional_APIs;
 using Alexa_proj.Data_Control;
+using Alexa_proj.Data_Control.Models;
 using Alexa_proj.DataAccess.Repositories;
     using Alexa_proj.Repositories;
 using IBM.Watson.SpeechToText.v1.Model;
@@ -9,19 +10,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Remoting;
-
+using System.Threading.Tasks;
 
 namespace Alexa_proj
 {
-    class ResultAnaliser : Executable
+    public class ResultAnaliser : ExecutableModel
     {
-        public async override void Execute()
+        public async override Task Execute()
         {
-            List<ApiExecutable> apiExecutables = new List<ApiExecutable>();
+            List<ExecutableModel> apiExecutables = new List<ExecutableModel>();
 
             List<string> capturedKeywords = new List<string>();
 
-            List<Executable> sortedApiExecutables = new List<Executable>();
+            List<ExecutableModel> sortedApiExecutables = new List<ExecutableModel>();
 
             using (var reader = new StreamReader(@"Resources/Text/RecordingResults.txt"))
             { 
@@ -35,7 +36,6 @@ namespace Alexa_proj
                       .GetStaticExecutablesAsync();
 
                 apiExecutables = executableModels
-                    .Cast<ApiExecutable>()
                     .ToList();
             }
 
@@ -45,13 +45,15 @@ namespace Alexa_proj
 
             foreach (var item in sortedApiExecutables)
             {
-                item.Execute();
+                var m = new Menu();
+                m.ExecutionManager = item;
+                StartUp.Menus.Add(m);
             }
 
-
+            StartUp.HardIterate();
         }         
 
-        private static List<Executable> SortRuntimeExecutables(IEnumerable<Executable> executables, IEnumerable<string> keywords)
+        private static List<ExecutableModel> SortRuntimeExecutables(IEnumerable<ExecutableModel> executables, IEnumerable<string> keywords)
         {
             var sorted =
                   executables
@@ -60,15 +62,25 @@ namespace Alexa_proj
                           m => keywords
                           .ToList()
                           .Contains(m.KeywordValue)))
+                  .Select(n =>
+                  {
+                      var m = GetTypeByAssemblyName<ExecutableModel>(n.ExecutableFunction.FunctionName);
+
+                      m.ExecutableFunction = n.ExecutableFunction;
+
+                      m.Keywords = n.Keywords;
+
+                      return m;
+                  })
                   .ToList();
 
             return sorted;
 
         }
 
-       private static T GetTypeByAssemblyName <T>(string TypeName)
+       private static T GetTypeByAssemblyName <T>(string TypeName) where T : ExecutableModel
         {
-            var AssemblyName = typeof(T).Assembly.GetName().Name;
+            var AssemblyName = typeof(ResultAnaliser).Assembly.GetName().Name;
            var handle = Activator.CreateInstance(AssemblyName, TypeName);
             return (T)handle.Unwrap();
         }

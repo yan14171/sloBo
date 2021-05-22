@@ -1,4 +1,5 @@
-﻿using DrawRectangle;
+﻿using Alexa_proj.Data_Control.Models;
+using DrawRectangle;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,9 +14,9 @@ using System.Threading.Tasks;
 namespace Alexa_proj.Additional_APIs
 {
 
-    public class DoggoCheck:ApiExecutable
+    public class DoggoCheck: ExecutableModel
     {
-        public override async void Execute()
+        public override async Task Execute()
         {
             var doggoReport = new DoggoInfo();
             var spinner = new ConsoleSpinner();
@@ -32,7 +33,7 @@ namespace Alexa_proj.Additional_APIs
             Thread Anim = new Thread(() => spinner.Turn());
             Anim.Start();
 
-            doggoReport = await GetDoggo();
+            doggoReport = (await GetInfo<DoggoInfo[]>()).First();
 
             doggoReport.Quality = (DoggoQuality)GetQuality();
 
@@ -45,20 +46,6 @@ namespace Alexa_proj.Additional_APIs
             Thread.Sleep(1500);
 
             OpenUrl(doggoReport.url);
-        }
-
-        private async Task<DoggoInfo> GetDoggo()
-        {
-            var client = new HttpClient();
-
-            var response =
-                await client.GetAsync($"https://api.thedogapi.com/v1/images/search");
-
-            string resp = await response.Content.ReadAsStringAsync();
-
-            var doggoReport = JsonConvert.DeserializeObject<IEnumerable<DoggoInfo>>(resp).FirstOrDefault();
-
-            return doggoReport;
         }
 
         private int GetQuality()

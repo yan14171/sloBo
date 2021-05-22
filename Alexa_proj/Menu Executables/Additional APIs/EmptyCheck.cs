@@ -1,13 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using Alexa_proj.Data_Control.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Alexa_proj.Additional_APIs
 {
-    public class EmptyCheck:ApiExecutable
+    public class EmptyCheck: ExecutableModel
     {
-        public override void Execute()
+        public override async Task Execute()
         {
             var DrawnRectangle =
                  new DrawRectangle.ConsoleRectangle(

@@ -1,7 +1,9 @@
 ﻿
+using Alexa_proj.Data_Control.Models;
 using DrawRectangle;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Alexa_proj
 {
@@ -29,9 +31,9 @@ namespace Alexa_proj
 
         public bool IsShown { get; set; }
 
-        public Executable ExecutionManager; 
+        public ExecutableModel ExecutionManager; 
 
-        public void Show()
+        public async Task Show()
         {
 
             if (!this.IsShown)
@@ -45,7 +47,7 @@ namespace Alexa_proj
                     item?.Draw();
                     item?.AlertTitle();
                 }
-              this.ExecutionManager?.Execute();
+                await (this.ExecutionManager?.Execute() ?? Task.CompletedTask);
                 Console.SetCursorPosition(0, 0);
                 OnScreenChange?.Invoke(this, new EventArgs());
               

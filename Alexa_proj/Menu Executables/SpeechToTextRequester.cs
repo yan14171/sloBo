@@ -19,7 +19,7 @@ using System.Linq;
 
 namespace Alexa_proj
 {
-    class SpeechToTextRequester : Executable
+    public class SpeechToTextRequester : ExecutableModel
     {
         const string API_KEY = "3oIocpwef11ts4l95M0Er9LvjRYYsW7Aka-tC5J3AZyf";
 
@@ -40,16 +40,16 @@ namespace Alexa_proj
 
         }
 
-        public async override void Execute()
+        public async override Task Execute()
         {
-            Animation.StartAnimation();
+           Animation.StartAnimation();
 
             //Uncomment to add new features
             //await SearchEngineSetup();
 
-            await Recognise( @"Resources/Files/RecordingFile (8).wav");
+            await Recognise(@"Resources/Files/RecordingFile (7).wav");
 
-            StartUp.HardIterate();
+           StartUp.HardIterate();
         }
 
         public static async Task Recognise( string filename = @"Resources/Files/RecordingFile.wav", string fileType = "wav" )
@@ -85,7 +85,7 @@ namespace Alexa_proj
             while (true)
             {
                 WatsonResponse = stt.CheckJob(ConcreteId);
-                if (WatsonResponse.Headers == null) break;
+                if (WatsonResponse.Result.Status == "completed") break;
             }
             var LastJobResults = WatsonResponse.Result.Results[0].Results;
             var RecognitionResults = new List<string>();
@@ -98,10 +98,8 @@ namespace Alexa_proj
                     }
             }
 
-
             using (var writer = new StreamWriter(@"Resources/Text/RecordingResults.txt"))
             {
-
                 writer.Write(JsonConvert.SerializeObject(RecognitionResults));
                 writer.Flush();
             }
@@ -165,7 +163,7 @@ namespace Alexa_proj
 
                 ExecutableFunction = new Function()
                 {
-                    FunctionEndpoint = $"http://api.openweathermap.org/data/2.5/weather?q=Kyiw&appid={API_KEY}",
+                    FunctionEndpoint = "http://api.openweathermap.org/data/2.5/weather?q=Kyiw",
                     FunctionName = "Alexa_proj.Additional_APIs.WeatherCheck",
                     FunctionResult = new FunctionResult() { ResultValue = string.Empty }
                 },
@@ -222,6 +220,8 @@ namespace Alexa_proj
 
             using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
             {
+                unitOfWork.Executables.RemoveRange(unitOfWork.Executables.GetAll());
+
                 unitOfWork.Executables.AddRange(returnedExecutables);
 
                 await unitOfWork.CompleteAsync();

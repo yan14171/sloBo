@@ -1,16 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿using Alexa_proj.Data_Control.Models;
+using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Alexa_proj.Additional_APIs
 {
-    public class CoronaCheck:ApiExecutable
+    public class CoronaCheck: ExecutableModel
     {
-        public override async void Execute()
+        public override async Task Execute()
 
         {
-            CoronaInfo coronaReport = await GetCoronaInfo();
+            CoronaInfo coronaReport = await GetInfo<CoronaInfo>();
 
             StartUp.CurrentMenu.DynamicShow(
                 new DrawRectangle.ConsoleRectangle(
@@ -36,13 +37,6 @@ namespace Alexa_proj.Additional_APIs
 
         }
 
-        private async Task<CoronaInfo> GetCoronaInfo()
-        {
-            var client = new HttpClient();
-            var response =
-                await client.GetAsync($"https://api.covid19api.com/summary");
-            CoronaInfo coronaReport = JsonConvert.DeserializeObject<CoronaInfo>( await response.Content.ReadAsStringAsync() );
-            return coronaReport;
-        }
+
     }
 }

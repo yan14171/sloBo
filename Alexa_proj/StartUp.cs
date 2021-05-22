@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 
@@ -12,21 +13,30 @@ namespace Alexa_proj
     class StartUp
     {   
         public static bool IsWait = false;
+
         public static event EventHandler OnEnterPressed;
+
         public const int SCREEN_SIZEX = 63;
+
         public const int SCREEN_SIZEY = 33;
-        static List<Menu> Menus = new List<Menu>();
+
+        public static List<Menu> Menus = new List<Menu>();
+
         static int _menuiterator = 0;
-       public static int MenuIterator {
+
+        public static int MenuIterator {
             get { return _menuiterator; }
             private set { _menuiterator = value <= Menus.Count() - 1 ? value : 0; }
         }
+
         static Menu _currentMenu;
+
         public static Menu CurrentMenu
         {
             get { return _currentMenu ?? new Menu(); }
             set { _currentMenu = value;}
         }
+
         static void KeyLoop()
         {
             ConsoleKeyInfo Pressed;
@@ -57,19 +67,22 @@ namespace Alexa_proj
    
             }
         }
-        static void MenuControl()
+
+        static async Task MenuControl()
         {
             while (true)
             {
                 if (!Menus[MenuIterator].IsShown)
-                    Menus[MenuIterator].Show();
+                    await Menus[MenuIterator].Show();
             }
         
         }
+
         public static void HardIterate()
         {
             MenuIterator++;
         }
+
         static void Main(string[] args)
         {
 
@@ -118,15 +131,14 @@ namespace Alexa_proj
                 Thread KeyL = new Thread(() =>
                 KeyLoop());
                 KeyL.Start();
-                MenuControl();
+                MenuControl().GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {
                 Console.Write("An exception was thrown in MenuControl. Message:" + ex.Message + "\n" + ex.StackTrace);
             }
-
-
         }
+
         private static void Menu_OnScreenChange(object sender, EventArgs e)
         {
             (sender as Menu).IsShown = true;

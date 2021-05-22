@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Alexa_proj.Data_Control.Models
 {
@@ -33,9 +36,18 @@ namespace Alexa_proj.Data_Control.Models
         [Column("executable_function")]
         public Function ExecutableFunction { get; set; }
 
-        public virtual void Execute()
+        public virtual Task Execute()
         {
             throw new System.NotImplementedException();
+        }
+
+        public async virtual Task<T> GetInfo<T> () where T : class
+        {
+            var client = new HttpClient();
+            var response =
+                await client.GetAsync(this.ExecutableFunction.FunctionEndpoint);
+            T Report = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+            return Report;
         }
     }
 

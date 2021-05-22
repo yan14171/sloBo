@@ -6,7 +6,7 @@ using Alexa_proj.Additional_APIs;
 
 namespace Alexa_proj.Tests
 {
-    public class APIs_Check
+    public class APIsTests
     {
 
         DoggoCheck doggoCheck;

@@ -1,4 +1,5 @@
 ﻿
+using Alexa_proj.Data_Control.Models;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
@@ -7,13 +8,12 @@ using System.Threading.Tasks;
 namespace Alexa_proj.Additional_APIs
 {
     [Serializable]
-    public class WeatherCheck : ApiExecutable
+    public class WeatherCheck : ExecutableModel
     {
         public string API_KEY = "4ca8dd9610ce1483dbf82dffa805ab08";
-        public override async void Execute()
-
+        public override async Task Execute()
         {
-            WeatherInfo weatherReport = await GetWeather();
+            WeatherInfo weatherReport = await GetInfo<WeatherInfo>();
 
             StartUp.CurrentMenu.DynamicShow(
                 new DrawRectangle.ConsoleRectangle(
@@ -27,13 +27,14 @@ namespace Alexa_proj.Additional_APIs
 
         }
 
-        private async Task<WeatherInfo> GetWeather()
+        public override async Task<WeatherInfo> GetInfo<WeatherInfo>()
         {
             var client = new HttpClient();
             var response =
-                await client.GetAsync($"http://api.openweathermap.org/data/2.5/weather?q=Kyiw&appid={API_KEY}");
-            WeatherInfo weatherReport = JsonConvert.DeserializeObject<WeatherInfo>(await response.Content.ReadAsStringAsync());
-            return weatherReport;
-        }
+                await client.GetAsync(this.ExecutableFunction.FunctionEndpoint + $"&appid={API_KEY}");
+            WeatherInfo Report = JsonConvert.DeserializeObject<WeatherInfo>(await response.Content.ReadAsStringAsync());
+            return Report;
+        }    
     }
 }
+

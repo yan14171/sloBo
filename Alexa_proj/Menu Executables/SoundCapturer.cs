@@ -4,15 +4,17 @@
 using NAudio.Wave;
 using System;
 using DrawRectangle;
+using Alexa_proj.Data_Control.Models;
+using System.Threading.Tasks;
 
 namespace Alexa_proj
 {
     [Serializable]
-    class SoundCapturer : Executable
+    public class SoundCapturer : ExecutableModel
     {
         static WaveInEvent waveSource;
         static WaveFileWriter waveFile;
-        public override void Execute()
+        public override async Task Execute()
         {
             string file = "RecordingFile.wav";
              CaptureSound(file);

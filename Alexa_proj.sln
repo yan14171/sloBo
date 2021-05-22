@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrawRectangle", "DrawRectan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alexa_proj.Tests", "Alexa_proj.Tests\Alexa_proj.Tests.csproj", "{BB767B60-7B45-4984-BE43-3D59A5CCE25D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexa_proj.DataAccess", "Alexa_proj.DataAccess\Alexa_proj.DataAccess.csproj", "{2CBA5FF2-45C3-4C5C-AC42-0E6154F1D82A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alexa_proj.DataAccess", "Alexa_proj.DataAccess\Alexa_proj.DataAccess.csproj", "{2CBA5FF2-45C3-4C5C-AC42-0E6154F1D82A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
