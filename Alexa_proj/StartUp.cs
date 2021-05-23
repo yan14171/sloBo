@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Alexa_proj.Data_Control;
 using Newtonsoft.Json;
 
 
@@ -23,6 +24,8 @@ namespace Alexa_proj
         public static List<Menu> Menus = new List<Menu>();
 
         static int _menuiterator = 0;
+
+        public static FunctionalContextFactory contextFactory;
 
         public static int MenuIterator {
             get { return _menuiterator; }
@@ -85,16 +88,11 @@ namespace Alexa_proj
 
         static void Main(string[] args)
         {
-
-            //  Database_Control.FunctionalContextFactory fact = new Database_Control.FunctionalContextFactory();
-            // var context = fact.CreateDbContext();
-            //  Console.WriteLine(context.Database.EnsureCreated());
-
             #region SetUp
             Console.CursorVisible = false;
             Console.OutputEncoding = Encoding.UTF8;
             Console.SetWindowSize(SCREEN_SIZEX, SCREEN_SIZEY);
-
+            contextFactory = new FunctionalContextFactory();
 
             Menu MainMenu;
             using (var read = new StreamReader(@"Resources/Menus/MainMenu.txt"))
@@ -123,14 +121,18 @@ namespace Alexa_proj
             Menus.Add(ResultsMenu);
             #endregion
 
-
             try
             {
                 Menu.OnScreenChange += Menu_OnScreenChange;
+
                 Menus[MenuIterator].Show();
+                
                 Thread KeyL = new Thread(() =>
+             
                 KeyLoop());
+                
                 KeyL.Start();
+                
                 MenuControl().GetAwaiter().GetResult();
             }
             catch (Exception ex)

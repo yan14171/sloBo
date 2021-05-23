@@ -1,11 +1,7 @@
 ﻿
-//#define Mine
-
-using Alexa_proj.Additional_APIs;
 using Alexa_proj.Data_Control;
 using Alexa_proj.Data_Control.Models;
 using Alexa_proj.Repositories;
-using DrawRectangle;
 using IBM.Cloud.SDK.Core.Authentication.Iam;
 using IBM.Cloud.SDK.Core.Http;
 using IBM.Watson.SpeechToText.v1;
@@ -15,7 +11,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Linq;
 
 namespace Alexa_proj
 {
@@ -47,16 +42,22 @@ namespace Alexa_proj
             //Uncomment to add new features
             //await SearchEngineSetup();
 
-            await Recognise(@"Resources/Files/RecordingFile (7).wav");
+           var recognitionResults = await Recognise(@"Resources/Files/RecordingFile (2).wav");
+
+           using (var writer = new StreamWriter(@"Resources/Text/RecordingResults.txt"))
+            {
+                writer.Write(JsonConvert.SerializeObject(recognitionResults));
+                writer.Flush();
+            }
 
            StartUp.HardIterate();
         }
 
-        public static async Task Recognise( string filename = @"Resources/Files/RecordingFile.wav", string fileType = "wav" )
+        public static async Task<IEnumerable<string>> Recognise( string filename = @"Resources/Files/RecordingFile.wav", string fileType = "wav" )
         {
             List<string> keywords = new List<string>();
 
-            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
+            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
             {
                 var Executables =
                     await
@@ -68,33 +69,42 @@ namespace Alexa_proj
                 .ToList();
             }
 
-                var result = await Task.Run(() => stt.CreateJob
-              (
-          audio: new MemoryStream(File.ReadAllBytes(filename)),
-          contentType: $"audio/{fileType}",
-          keywords: keywords,
-          model: "en-US_NarrowbandModel",
-          keywordsThreshold: 0.2F,
-          speechDetectorSensitivity: 0.8F,
-          backgroundAudioSuppression: 0.5F,
-          timestamps: true
-          ));
-            string ConcreteId = result.Result.Id;
+            var WatsonRecognitonJob = Task.Run(() => stt.CreateJob
+          (
+      audio: new MemoryStream(File.ReadAllBytes(filename)),
+      contentType: $"audio/{fileType}",
+      keywords: keywords,
+      model: "en-US_NarrowbandModel",
+      keywordsThreshold: 0.2F,
+      speechDetectorSensitivity: 0.8F,
+      backgroundAudioSuppression: 0.5F,
+      timestamps: true
+      ));
 
+            DynamicAPIsSetup("play Despacito");
+
+            string ConcreteId = (await WatsonRecognitonJob).Result.Id;
+
+            List<string> RecognitionResults =
+            await Task.Run(()=> GetWatsonRecognitionResults(ConcreteId));
+
+            return RecognitionResults;
+        }
+
+        private static List<string> GetWatsonRecognitionResults(string ConcreteId)
+        {
             DetailedResponse<RecognitionJob> WatsonResponse;
-            
+
             while (true)
             {
                 WatsonResponse = stt.CheckJob(ConcreteId);
                 if (WatsonResponse.Result.Status == "completed") break;
             }
-            
+
             var LastJobResults = WatsonResponse.Result.Results[0].Results;
 
-            DynamicAPIsSetup("play Despacito");
-
             var RecognitionResults = new List<string>();
-            
+
             foreach (var item in LastJobResults)
             {
                 if (item.KeywordsResult.Count > 0)
@@ -104,11 +114,7 @@ namespace Alexa_proj
                     }
             }
 
-            using (var writer = new StreamWriter(@"Resources/Text/RecordingResults.txt"))
-            {
-                writer.Write(JsonConvert.SerializeObject(RecognitionResults));
-                writer.Flush();
-            }
+            return RecognitionResults;
         }
 
         private async static Task<List<ExecutableModel>> SearchEngineSetup()
@@ -224,7 +230,7 @@ namespace Alexa_proj
                 Doggomodel
             };
 
-            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
+            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
             {
                 unitOfWork.Executables.RemoveRange(unitOfWork.Executables.GetAll());
 
@@ -236,7 +242,7 @@ namespace Alexa_proj
             }
         }
 
-        private async static Task DynamicAPIsSetup(string RequestText)
+        private async static Task<List<ExecutableModel>> DynamicAPIsSetup(string RequestText)
         {
             var SongKeywords = new List<string>(new string[] {
             "play a song",
@@ -267,20 +273,22 @@ namespace Alexa_proj
                 SongModel.Keywords.Add(new Keyword { KeywordValue = item });
             }
 
-            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
+            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
             {
-                var lastSongCheckCopy =
-                    unitOfWork.Executables.GetAll()
-                    .Where(n => n.ExecutableName == "SongExecutable");
+                var lastSongCheckCopy = await
+                    (unitOfWork.Executables as ExecutableRepository).GetAllAsync();
+               
+                lastSongCheckCopy =
+                    lastSongCheckCopy.Where(n => n.ExecutableName == "SongExecutable"); 
 
-                unitOfWork.Executables.RemoveRange(lastSongCheckCopy);
+                (unitOfWork.Executables as ExecutableRepository).RemoveRange(lastSongCheckCopy);
 
-                unitOfWork.Executables.Add(SongModel);
+                await (unitOfWork.Executables as ExecutableRepository).AddAsync(SongModel);
 
-                unitOfWork.Complete();
+                await unitOfWork.CompleteAsync();
             }
 
-
+            return new List<ExecutableModel>() { SongModel };
         }
     }
 }

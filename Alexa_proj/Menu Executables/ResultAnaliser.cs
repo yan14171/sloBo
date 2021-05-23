@@ -18,49 +18,15 @@ namespace Alexa_proj
     {
         public async override Task Execute()
         {
-            List<ExecutableModel> apiExecutables = new List<ExecutableModel>();
+            List<ExecutableModel> apiExecutables = ReadAvailableExecutables().Result;
 
-            List<string> capturedKeywords = new List<string>();
+            List<string> capturedKeywords = ReadKeywords();
 
             List<ExecutableModel> sortedApiExecutables = new List<ExecutableModel>();
 
-            using (var reader = new StreamReader(@"Resources/Text/RecordingResults.txt"))
-            {
-                capturedKeywords = JsonConvert.DeserializeObject<List<string>>(reader.ReadToEnd());
-            }
-
-            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
-            {
-                var executableModels = await
-                      (unitOfWork.Executables as ExecutableRepository)
-                      .GetStaticExecutablesAsync();
-
-                apiExecutables = executableModels
-                    .ToList();
-            }
-
-
-            ///song check
-
-
-
-
-
-
-            capturedKeywords = new List<string>() { "play" };
-
-
-
-
-
-
-            ///song check
-
-
-
             sortedApiExecutables = SortRuntimeExecutables(apiExecutables, capturedKeywords);
 
-                Animation.StopAnimation();
+            Animation.StopAnimation();
 
             foreach (var item in sortedApiExecutables)
             {
@@ -70,7 +36,35 @@ namespace Alexa_proj
             }
 
             StartUp.HardIterate();
-        }         
+        }
+
+        private async Task<List<ExecutableModel>> ReadAvailableExecutables()
+        {
+            List<ExecutableModel> apiExecutables;
+
+            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
+            {
+                var executableModels = await
+                      (unitOfWork.Executables as ExecutableRepository)
+                      .GetStaticExecutablesAsync();
+
+                 apiExecutables = executableModels
+                    .ToList();
+            }
+
+            return apiExecutables;
+        }
+
+        private List<string> ReadKeywords()
+        {
+            List<string> capturedKeywords;
+            using (var reader = new StreamReader(@"Resources/Text/RecordingResults.txt"))
+            {
+                capturedKeywords = JsonConvert.DeserializeObject<List<string>>(reader.ReadToEnd());
+            }
+
+            return capturedKeywords;
+        }
 
         private static List<ExecutableModel> SortRuntimeExecutables(IEnumerable<ExecutableModel> executables, IEnumerable<string> keywords)
         {
