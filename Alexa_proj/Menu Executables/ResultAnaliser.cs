@@ -2,7 +2,7 @@
 using Alexa_proj.Data_Control;
 using Alexa_proj.Data_Control.Models;
 using Alexa_proj.DataAccess.Repositories;
-    using Alexa_proj.Repositories;
+using Alexa_proj.Repositories;
 using IBM.Watson.SpeechToText.v1.Model;
 using Newtonsoft.Json;
 using System;
@@ -25,11 +25,11 @@ namespace Alexa_proj
             List<ExecutableModel> sortedApiExecutables = new List<ExecutableModel>();
 
             using (var reader = new StreamReader(@"Resources/Text/RecordingResults.txt"))
-            { 
+            {
                 capturedKeywords = JsonConvert.DeserializeObject<List<string>>(reader.ReadToEnd());
             }
 
-            using (var unitOfWork = new UnitOfWork( new FunctionalContextFactory().CreateDbContext()))
+            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
             {
                 var executableModels = await
                       (unitOfWork.Executables as ExecutableRepository)
@@ -38,6 +38,25 @@ namespace Alexa_proj
                 apiExecutables = executableModels
                     .ToList();
             }
+
+
+            ///song check
+
+
+
+
+
+
+            capturedKeywords = new List<string>() { "play" };
+
+
+
+
+
+
+            ///song check
+
+
 
             sortedApiExecutables = SortRuntimeExecutables(apiExecutables, capturedKeywords);
 

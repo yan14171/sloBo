@@ -1,9 +1,9 @@
-E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.AssemblyInfoInputs.cache
-E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.AssemblyInfo.cs
-E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.csproj.CoreCompileInputs.cache
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Debug\netstandard2.1\Alexa_proj.DataAccess.deps.json
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Debug\netstandard2.1\Alexa_proj.DataAccess.dll
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Debug\netstandard2.1\Alexa_proj.DataAccess.pdb
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.csprojAssemblyReference.cache
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.AssemblyInfoInputs.cache
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.AssemblyInfo.cs
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.csproj.CoreCompileInputs.cache
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.dll
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.pdb
-E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\Alexa_proj.DataAccess.csprojAssemblyReference.cache

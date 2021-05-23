@@ -82,13 +82,19 @@ namespace Alexa_proj
             string ConcreteId = result.Result.Id;
 
             DetailedResponse<RecognitionJob> WatsonResponse;
+            
             while (true)
             {
                 WatsonResponse = stt.CheckJob(ConcreteId);
                 if (WatsonResponse.Result.Status == "completed") break;
             }
+            
             var LastJobResults = WatsonResponse.Result.Results[0].Results;
+
+            DynamicAPIsSetup("play Despacito");
+
             var RecognitionResults = new List<string>();
+            
             foreach (var item in LastJobResults)
             {
                 if (item.KeywordsResult.Count > 0)
@@ -228,6 +234,53 @@ namespace Alexa_proj
 
                 return unitOfWork.Executables as List<ExecutableModel>;
             }
+        }
+
+        private async static Task DynamicAPIsSetup(string RequestText)
+        {
+            var SongKeywords = new List<string>(new string[] {
+            "play a song",
+            "listen to",
+            "listen",
+            "play",
+            "song",
+            "turn on",
+            "turn", });
+
+            ExecutableModel SongModel = new ExecutableModel()
+            {
+                ExecutableName = "SongExecutable",
+
+                Keywords = new List<Keyword>(),
+
+                ExecutableFunction = new Function()
+                {
+                    FunctionEndpoint = "https://api.deezer.com/search",
+                    FunctionName = "Alexa_proj.Additional_APIs.SongCheck",
+                    FunctionResult = new FunctionResult() { ResultValue = RequestText }
+                },
+
+            };
+
+            foreach (var item in SongKeywords)
+            {
+                SongModel.Keywords.Add(new Keyword { KeywordValue = item });
+            }
+
+            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
+            {
+                var lastSongCheckCopy =
+                    unitOfWork.Executables.GetAll()
+                    .Where(n => n.ExecutableName == "SongExecutable");
+
+                unitOfWork.Executables.RemoveRange(lastSongCheckCopy);
+
+                unitOfWork.Executables.Add(SongModel);
+
+                unitOfWork.Complete();
+            }
+
+
         }
     }
 }
