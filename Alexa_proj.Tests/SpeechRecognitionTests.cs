@@ -11,12 +11,16 @@ namespace Alexa_proj.Tests
 {
     class SpeechRecognitionTests
     {
-
+        protected SpeechToTextRequester _requester { get; set; }
 
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
             TestContext.WriteLine("One time setup");
+
+            _requester = new SpeechToTextRequester();
+
+            // await Task.Run(() => _requester.Recognise(@"Resources/Files/dog.wav"));
         }
 
         [SetUp]
@@ -25,7 +29,30 @@ namespace Alexa_proj.Tests
             TestContext.WriteLine("Setup");
         }
 
-       
+        [TestCase("weather")]
+        [TestCase("dogo")]
+        [TestCase("patients")]
+        [TestCase("dog")]
+        [TestCase("corona")]
+        //[TestCase("doggo box")]
+        [TestCase("give me a dog")]
+        [Test]
+        public async Task Requester_Recognise_On_Test_File_Than_Return_File_Name(string fileName)
+        {
+            var RecogniseResult = await _requester.Recognise($@"Resources/Files/{fileName}.wav");
+
+            Assert.AreEqual(RecogniseResult.First(), fileName);
+        }
+
+        [Test]
+        public async Task Dynamic_Setup_Returns_List_With_1_Song_Request()
+        {
+           var executablesList = await SpeechToTextRequester.DynamicAPIsSetup("");
+
+            Assert.AreEqual(executablesList.Count(), 1);
+
+            StringAssert.Contains("SongCheck", executablesList.First().ExecutableFunction.FunctionName);
+        }
 
         [TearDown]
         public void TearDown()
