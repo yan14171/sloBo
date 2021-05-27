@@ -10,7 +10,7 @@ namespace Alexa_proj
     
 
     [Serializable]
-    class Menu 
+    public class Menu 
     {
         public static ConsoleRectangle ClearRectangle;
        static Menu()

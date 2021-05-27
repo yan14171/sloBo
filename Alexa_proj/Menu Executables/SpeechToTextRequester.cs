@@ -37,12 +37,13 @@ namespace Alexa_proj
 
         public async override Task Execute()
         {
-           Animation.StartAnimation();
+
+            Animation.StartAnimation();
 
             //Uncomment to add new features
             //await SearchEngineSetup();
 
-           var recognitionResults = await Recognise(@"Resources/Files/RecordingFile (2).wav");
+           var recognitionResults = await Recognise(@"Resources/Files/dog.wav");
 
            using (var writer = new StreamWriter(@"Resources/Text/RecordingResults.txt"))
             {
@@ -53,16 +54,16 @@ namespace Alexa_proj
            StartUp.HardIterate();
         }
 
-        public static async Task<IEnumerable<string>> Recognise( string filename = @"Resources/Files/RecordingFile.wav", string fileType = "wav" )
+        public async Task<IEnumerable<string>> Recognise( string filename = @"Resources/Files/RecordingFile.wav", string fileType = "wav" )
         {
             List<string> keywords = new List<string>();
 
-            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
+            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
             {
                 var Executables =
                     await
                 (unitOfWork.Executables as ExecutableRepository)
-                .GetStaticExecutablesAsync();
+                .GetStaticExecutablesWithKeywordsAsync();
 
                 keywords = Executables
                 .SelectMany(n => n.Keywords.Select(m => m.KeywordValue))
@@ -91,7 +92,7 @@ namespace Alexa_proj
             return RecognitionResults;
         }
 
-        private static List<string> GetWatsonRecognitionResults(string ConcreteId)
+        private List<string> GetWatsonRecognitionResults(string ConcreteId)
         {
             DetailedResponse<RecognitionJob> WatsonResponse;
 
@@ -117,7 +118,23 @@ namespace Alexa_proj
             return RecognitionResults;
         }
 
-        private async static Task<List<ExecutableModel>> SearchEngineSetup()
+        public async static Task<List<ExecutableModel>> SearchEngineSetup()
+        {
+            List<ExecutableModel> returnedExecutables = CreateStaticExecutables();
+
+            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
+            {
+                unitOfWork.Executables.RemoveRange(unitOfWork.Executables.GetAll());
+
+                unitOfWork.Executables.AddRange(returnedExecutables);
+
+                await unitOfWork.CompleteAsync();
+
+                return unitOfWork.Executables as List<ExecutableModel>;
+            }
+        }
+
+        public static List<ExecutableModel> CreateStaticExecutables()
         {
             var AvailableFeatures = new List<ExecutableModel>();
             var WeatherKeywords = new List<string>(new string[] {
@@ -229,20 +246,10 @@ namespace Alexa_proj
                 Coronamodel,
                 Doggomodel
             };
-
-            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
-            {
-                unitOfWork.Executables.RemoveRange(unitOfWork.Executables.GetAll());
-
-                unitOfWork.Executables.AddRange(returnedExecutables);
-
-                await unitOfWork.CompleteAsync();
-
-                return unitOfWork.Executables as List<ExecutableModel>;
-            }
+            return returnedExecutables;
         }
 
-        private async static Task<List<ExecutableModel>> DynamicAPIsSetup(string RequestText)
+        public async static Task<List<ExecutableModel>> DynamicAPIsSetup(string RequestText)
         {
             var SongKeywords = new List<string>(new string[] {
             "play a song",
@@ -273,7 +280,7 @@ namespace Alexa_proj
                 SongModel.Keywords.Add(new Keyword { KeywordValue = item });
             }
 
-            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
+            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
             {
                 var lastSongCheckCopy = await
                     (unitOfWork.Executables as ExecutableRepository).GetAllAsync();

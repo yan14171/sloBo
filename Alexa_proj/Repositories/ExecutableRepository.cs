@@ -42,5 +42,28 @@ namespace Alexa_proj.Repositories
 
             return returnedExecutables;
         }
+
+        public async Task<IEnumerable<ExecutableModel>> GetEmptyStaticExecutablesAsync()
+        {
+            var returnedExecutables =
+                await
+                _functionalContext.Executables
+                 .Where(n => n.ExecutableFunction.FunctionEndpoint != null)
+                 .ToListAsync();
+
+            return returnedExecutables;
+        }
+
+        public async Task<IEnumerable<ExecutableModel>> GetStaticExecutablesWithKeywordsAsync()
+        {
+            var returnedExecutables =
+                await
+                _functionalContext.Executables
+                 .Include(n => n.Keywords)
+                 .Where(n => n.ExecutableFunction.FunctionEndpoint != null)
+                 .ToListAsync();
+
+            return returnedExecutables;
+        }
     }
 }

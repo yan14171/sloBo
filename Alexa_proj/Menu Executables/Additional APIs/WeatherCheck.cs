@@ -10,7 +10,7 @@ namespace Alexa_proj.Additional_APIs
     [Serializable]
     public class WeatherCheck : ExecutableModel
     {
-        public string API_KEY = "4ca8dd9610ce1483dbf82dffa805ab08";
+        string API_KEY = "4ca8dd9610ce1483dbf82dffa805ab08";
         public override async Task Execute()
         {
             WeatherInfo weatherReport = await GetInfo<WeatherInfo>();
@@ -24,7 +24,6 @@ namespace Alexa_proj.Additional_APIs
                     0
                     )
                 );
-
         }
 
         public override async Task<WeatherInfo> GetInfo<WeatherInfo>()
