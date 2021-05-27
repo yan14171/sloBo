@@ -5,7 +5,7 @@ namespace Alexa_proj.Additional_APIs
 {
 
     [Serializable]
-    public class WeatherInfo : ExecutableInfo
+    public class WeatherInfo
     {
         public class Coord
         {

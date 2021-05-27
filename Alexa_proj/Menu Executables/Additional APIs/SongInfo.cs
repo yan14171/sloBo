@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Alexa_proj.Additional_APIs
 {
-    public class Artist : ExecutableInfo
+    public class Artist
     {
         public int id { get; set; }
         public string name { get; set; }

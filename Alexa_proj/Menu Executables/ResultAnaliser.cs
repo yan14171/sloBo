@@ -18,7 +18,7 @@ namespace Alexa_proj
     {
         public async override Task Execute()
         {
-            List<ExecutableModel> apiExecutables = await ReadAvailableExecutables();
+            List<ExecutableModel> apiExecutables = ReadAvailableExecutables().Result;
 
             List<string> capturedKeywords = ReadKeywords();
 
@@ -38,7 +38,7 @@ namespace Alexa_proj
             StartUp.HardIterate();
         }
 
-        public async Task<List<ExecutableModel>> ReadAvailableExecutables()
+        private async Task<List<ExecutableModel>> ReadAvailableExecutables()
         {
             List<ExecutableModel> apiExecutables;
 
@@ -66,7 +66,7 @@ namespace Alexa_proj
             return capturedKeywords;
         }
 
-        public static List<ExecutableModel> SortRuntimeExecutables(IEnumerable<ExecutableModel> executables, IEnumerable<string> keywords)
+        private static List<ExecutableModel> SortRuntimeExecutables(IEnumerable<ExecutableModel> executables, IEnumerable<string> keywords)
         {
             var sorted =
                   executables

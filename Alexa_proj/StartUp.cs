@@ -11,18 +11,8 @@ using Newtonsoft.Json;
 
 namespace Alexa_proj
 {
-    public class StartUp
-    {
-        static StartUp()
-        {
-            Console.CursorVisible = false;
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.SetWindowSize(SCREEN_SIZEX, SCREEN_SIZEY);
-            contextFactory = new FunctionalContextFactory();
-
-            Task.Run(() => new SpeechToTextRequester().Recognise(@"Resources/Files/dog.wav"));
-        }
-
+    class StartUp
+    {   
         public static bool IsWait = false;
 
         public static event EventHandler OnEnterPressed;
@@ -99,7 +89,10 @@ namespace Alexa_proj
         static void Main(string[] args)
         {
             #region SetUp
-
+            Console.CursorVisible = false;
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.SetWindowSize(SCREEN_SIZEX, SCREEN_SIZEY);
+            contextFactory = new FunctionalContextFactory();
 
             Menu MainMenu;
             using (var read = new StreamReader(@"Resources/Menus/MainMenu.txt"))

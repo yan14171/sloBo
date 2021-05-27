@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace Alexa_proj.Additional_APIs
 {
 
-    public enum DoggoQuality 
+    public enum DoggoQuality
     {
         Common,
         Rare,
@@ -13,7 +13,7 @@ namespace Alexa_proj.Additional_APIs
     }
 
     [Serializable]
-    public class DoggoInfo : ExecutableInfo
+    public class DoggoInfo
     {
         public class Weight
         {

@@ -1,1 +1,1 @@
-["situation on corona","corona"]
+["corona","corona info"]
