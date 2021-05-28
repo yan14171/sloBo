@@ -1,0 +1,9 @@
+E:\stuff\j\Alexa_proj\DrawRectangle\bin\Release\netstandard2.0\DrawRectangle.deps.json
+E:\stuff\j\Alexa_proj\DrawRectangle\bin\Release\netstandard2.0\DrawRectangle.dll
+E:\stuff\j\Alexa_proj\DrawRectangle\bin\Release\netstandard2.0\DrawRectangle.pdb
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Release\netstandard2.0\DrawRectangle.csprojAssemblyReference.cache
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Release\netstandard2.0\DrawRectangle.AssemblyInfoInputs.cache
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Release\netstandard2.0\DrawRectangle.AssemblyInfo.cs
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Release\netstandard2.0\DrawRectangle.csproj.CoreCompileInputs.cache
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Release\netstandard2.0\DrawRectangle.dll
+E:\stuff\j\Alexa_proj\DrawRectangle\obj\Release\netstandard2.0\DrawRectangle.pdb
