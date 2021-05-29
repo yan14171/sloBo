@@ -15,13 +15,7 @@ namespace Alexa_proj.Additional_APIs
         public override async Task Execute()
         {
             this.ExecutableFunction.FunctionResult.ResultValue
-                =
-                String.Join(
-                    " ",
-            this.ExecutableFunction.FunctionResult.ResultValue
-                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
-                .Where(n => !Keywords.Any(m => m.KeywordValue == n))
-                );
+                 = CreateSongRequest(this.ExecutableFunction.FunctionResult.ResultValue);
 
             ExecutableFunction.FunctionEndpoint += $"?q=track:\"{ExecutableFunction.FunctionResult.ResultValue}\"";
 
@@ -40,6 +34,21 @@ namespace Alexa_proj.Additional_APIs
             Thread.Sleep(500);
 
             OpenUrl(songReport.data[0].preview);
+        }
+
+        public string CreateSongRequest(string input)
+        {
+            string output =
+                String.Join(
+                    " ",
+                 input
+                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                .TakeWhile(n => n != "by")
+                .Where(n => !Keywords.Any(m => m.KeywordValue == n))
+                .Where(n => n != "%HESITATION")
+                );
+
+            return output;
         }
 
         private void OpenUrl(string url)

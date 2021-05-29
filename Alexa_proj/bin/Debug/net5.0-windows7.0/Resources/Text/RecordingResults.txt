@@ -1,1 +1,1 @@
-["play","play the song"]
+["play"]

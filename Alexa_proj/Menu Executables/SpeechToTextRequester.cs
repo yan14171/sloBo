@@ -42,7 +42,7 @@ namespace Alexa_proj
 
             Animation.StartAnimation();
 
-           var recognitionResults = await Recognise(@"Resources/Files/play(1).wav");
+           var recognitionResults = await Recognise(@"Resources/Files/play(2).wav");
 
             await SearchEngineSetup();
 
