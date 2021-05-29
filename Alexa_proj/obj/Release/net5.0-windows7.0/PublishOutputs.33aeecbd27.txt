@@ -1,4 +1,24 @@
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.exe
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\corona.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\dog.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\doggo box.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\dogo.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\give me a dog.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\listen.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\patients.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\play(1).wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\play(2).wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\play.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\RecordingFile.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\weather.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Menus\MainMenu.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Menus\RecordMenu.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\Doggo.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\DoggoOpening.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\Main_ScreenTitle.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\Processing.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\RecordingResults.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\RecordingScreenMicrophone.txt
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.dll
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.runtimeconfig.json
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.pdb
