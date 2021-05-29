@@ -27,11 +27,13 @@ namespace Alexa_proj.Additional_APIs
 
             SongInfo songReport = await GetInfo<SongInfo>();
 
+            string outputMessage = $"Playing {songReport.data[0].title_short} by {songReport.data[0].artist.name}";
+
             StartUp.CurrentMenu.DynamicShow(
              new DrawRectangle.ConsoleRectangle(
-                 45, 3, new DrawRectangle.Point() { X = 1, Y = 8 },
+                 outputMessage.Length, 1, new DrawRectangle.Point() { X = 1, Y = 1 },
                  ConsoleColor.Green,
-                 new[] { $"Playing {songReport.data[0].title_short} by {songReport.data[0].artist.name}" },
+                 new[] { outputMessage },
                  0
                  ));
 

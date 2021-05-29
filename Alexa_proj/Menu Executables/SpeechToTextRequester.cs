@@ -1,4 +1,4 @@
-﻿
+﻿ 
 using Alexa_proj.Data_Control;
 using Alexa_proj.Data_Control.Models;
 using Alexa_proj.Repositories;
@@ -20,6 +20,8 @@ namespace Alexa_proj
 
         const string SERVICE_INSTANCE_URL = "https://api.eu-gb.speech-to-text.watson.cloud.ibm.com";
 
+        static string _watsonConcreteId = string.Empty;
+
         static readonly SpeechToTextService stt;
 
         static SpeechToTextRequester()
@@ -40,12 +42,11 @@ namespace Alexa_proj
 
             Animation.StartAnimation();
 
-            //Uncomment to add new features
-            //await SearchEngineSetup();
+           var recognitionResults = await Recognise(@"Resources/Files/play(1).wav");
 
-           var recognitionResults = await Recognise(@"Resources/Files/dog.wav");
+            await SearchEngineSetup();
 
-           using (var writer = new StreamWriter(@"Resources/Text/RecordingResults.txt"))
+            using (var writer = new StreamWriter(@"Resources/Text/RecordingResults.txt"))
             {
                 writer.Write(JsonConvert.SerializeObject(recognitionResults));
                 writer.Flush();
@@ -82,17 +83,33 @@ namespace Alexa_proj
       timestamps: true
       ));
 
-            DynamicAPIsSetup("play Despacito");
-
-            string ConcreteId = (await WatsonRecognitonJob).Result.Id;
+            _watsonConcreteId = (await WatsonRecognitonJob).Result.Id;
 
             List<string> RecognitionResults =
-            await Task.Run(()=> GetWatsonRecognitionResults(ConcreteId));
+            await Task.Run(()=> GetWatsonRecognitionResults(_watsonConcreteId));
 
             return RecognitionResults;
         }
 
-        private List<string> GetWatsonRecognitionResults(string ConcreteId)
+        private static string GetWatsonAlternativeTranscript(string ConcreteId)
+        {
+            DetailedResponse<RecognitionJob> WatsonResponse;
+
+            while (true)
+            {
+                WatsonResponse = stt.CheckJob(ConcreteId);
+                if (WatsonResponse.Result.Status == "completed") break;
+            }
+
+            var LastJobResults = WatsonResponse.Result.Results[0].Results;
+
+            var RecognitionResult =
+                LastJobResults[0].Alternatives[0].Transcript;
+
+            return RecognitionResult;
+        }
+
+        private static List<string> GetWatsonRecognitionResults(string ConcreteId)
         {
             DetailedResponse<RecognitionJob> WatsonResponse;
 
@@ -120,7 +137,7 @@ namespace Alexa_proj
 
         public async static Task<List<ExecutableModel>> SearchEngineSetup()
         {
-            List<ExecutableModel> returnedExecutables = CreateStaticExecutables();
+            List<ExecutableModel> returnedExecutables = CreateExecutables();
 
             using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
             {
@@ -134,9 +151,19 @@ namespace Alexa_proj
             }
         }
 
-        public static List<ExecutableModel> CreateStaticExecutables()
+        public static List<ExecutableModel> CreateExecutables()
         {
             var AvailableFeatures = new List<ExecutableModel>();
+
+            AvailableFeatures.AddRange(CreateStaticExecutables());
+
+            AvailableFeatures.AddRange(CreateDynamicExecutables());
+
+            return AvailableFeatures;
+        }
+
+        private static List<ExecutableModel> CreateStaticExecutables()
+        {
             var WeatherKeywords = new List<string>(new string[] {
                 "what's the weather",
                 "window",
@@ -183,6 +210,7 @@ namespace Alexa_proj
                 "doggobox",
                 "open the doggo box"
             });
+
 
             ExecutableModel Weathermodel = new ExecutableModel()
             {
@@ -240,27 +268,28 @@ namespace Alexa_proj
                 Doggomodel.Keywords.Add(new Keyword { KeywordValue = item });
             }
 
+
             var returnedExecutables = new List<ExecutableModel>()
             {
                 Weathermodel,
                 Coronamodel,
-                Doggomodel
+                Doggomodel,
             };
             return returnedExecutables;
         }
 
-        public async static Task<List<ExecutableModel>> DynamicAPIsSetup(string RequestText)
+        private static List<ExecutableModel> CreateDynamicExecutables()
         {
             var SongKeywords = new List<string>(new string[] {
             "play a song",
+            "play the song",
             "listen to",
             "listen",
             "play",
-            "song",
             "turn on",
             "turn", });
 
-            ExecutableModel SongModel = new ExecutableModel()
+            var SongModel = new ExecutableModel()
             {
                 ExecutableName = "SongExecutable",
 
@@ -270,7 +299,7 @@ namespace Alexa_proj
                 {
                     FunctionEndpoint = "https://api.deezer.com/search",
                     FunctionName = "Alexa_proj.Additional_APIs.SongCheck",
-                    FunctionResult = new FunctionResult() { ResultValue = RequestText }
+                    FunctionResult = new FunctionResult() { ResultValue = string.Empty }
                 },
 
             };
@@ -280,22 +309,14 @@ namespace Alexa_proj
                 SongModel.Keywords.Add(new Keyword { KeywordValue = item });
             }
 
-            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
+            SongModel.ExecutableFunction.FunctionResult.ResultValue = GetWatsonAlternativeTranscript(_watsonConcreteId);
+
+            var returnedExecutables = new List<ExecutableModel>()
             {
-                var lastSongCheckCopy = await
-                    (unitOfWork.Executables as ExecutableRepository).GetAllAsync();
-               
-                lastSongCheckCopy =
-                    lastSongCheckCopy.Where(n => n.ExecutableName == "SongExecutable"); 
+                SongModel
+            };
 
-                (unitOfWork.Executables as ExecutableRepository).RemoveRange(lastSongCheckCopy);
-
-                await (unitOfWork.Executables as ExecutableRepository).AddAsync(SongModel);
-
-                await unitOfWork.CompleteAsync();
-            }
-
-            return new List<ExecutableModel>() { SongModel };
+            return returnedExecutables;
         }
     }
 }
