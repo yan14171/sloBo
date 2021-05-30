@@ -1,4 +1,5 @@
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.exe
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\appsettings.json
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\corona.wav
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\dog.wav
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\doggo box.wav

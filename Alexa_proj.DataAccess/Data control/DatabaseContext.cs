@@ -45,7 +45,11 @@ namespace Alexa_proj.Data_Control
 
             var optionsBuilder = new DbContextOptionsBuilder<FunctionalContext>();
             optionsBuilder
-                .UseSqlServer(configuration["ConnectionStrings:DefaultConnection"]);
+                .UseSqlServer(configuration["ConnectionStrings:DefaultConnection"],
+                sqlServerOptionsAction: sqlOptions =>
+                {
+                    sqlOptions.EnableRetryOnFailure();
+                });
 
             return new FunctionalContext(optionsBuilder.Options);
         }

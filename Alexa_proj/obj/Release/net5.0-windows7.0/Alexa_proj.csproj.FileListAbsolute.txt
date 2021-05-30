@@ -99,3 +99,4 @@ E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\Resources\Text\Ma
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\Resources\Text\Processing.txt
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\Resources\Text\RecordingResults.txt
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\Resources\Text\RecordingScreenMicrophone.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\appsettings.json
