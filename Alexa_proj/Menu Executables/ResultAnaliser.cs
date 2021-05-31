@@ -18,6 +18,17 @@ namespace Alexa_proj
     {
         public async override Task Execute()
         {
+            List<ExecutableModel> sortedApiExecutables = await GetSortedExecutables();
+
+            Animation.StopAnimation();
+
+            ShowExecutables(sortedApiExecutables);
+
+            StartUp.HardIterate();
+        }
+
+        public async Task<List<ExecutableModel>> GetSortedExecutables()
+        {
             List<ExecutableModel> apiExecutables = await ReadAvailableExecutables();
 
             List<string> capturedKeywords = ReadKeywords();
@@ -26,23 +37,24 @@ namespace Alexa_proj
 
             sortedApiExecutables = SortRuntimeExecutables(apiExecutables, capturedKeywords);
 
-            Animation.StopAnimation();
+            return sortedApiExecutables;
+        }
 
+        public void ShowExecutables(IEnumerable<ExecutableModel> sortedApiExecutables)
+        {
             foreach (var item in sortedApiExecutables)
             {
                 var m = new Menu();
                 m.ExecutionManager = item;
                 StartUp.Menus.Add(m);
             }
-
-            StartUp.HardIterate();
         }
 
         public async Task<List<ExecutableModel>> ReadAvailableExecutables()
         {
             List<ExecutableModel> apiExecutables;
 
-            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
+            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
             {
                 var executableModels = await
                       (unitOfWork.Executables as ExecutableRepository)
@@ -65,6 +77,14 @@ namespace Alexa_proj
 
             return capturedKeywords;
         }
+
+        private static T GetTypeByAssemblyName <T>(string TypeName) where T : ExecutableModel
+        {
+            var AssemblyName = typeof(ResultAnaliser).Assembly.GetName().Name;
+           var handle = Activator.CreateInstance(AssemblyName, TypeName);
+            return (T)handle.Unwrap();
+        }
+
 
         public static List<ExecutableModel> SortRuntimeExecutables(IEnumerable<ExecutableModel> executables, IEnumerable<string> keywords)
         {
@@ -89,13 +109,6 @@ namespace Alexa_proj
 
             return sorted;
 
-        }
-
-       private static T GetTypeByAssemblyName <T>(string TypeName) where T : ExecutableModel
-        {
-            var AssemblyName = typeof(ResultAnaliser).Assembly.GetName().Name;
-           var handle = Activator.CreateInstance(AssemblyName, TypeName);
-            return (T)handle.Unwrap();
         }
     }
 }

@@ -9,6 +9,7 @@ namespace Alexa_proj.Tests
 {
     class AnaliserTests
     {
+        [OneTimeSetUp]
         public void OneTimeSetup()
         {
             TestContext.WriteLine("One time setup");
@@ -22,23 +23,7 @@ namespace Alexa_proj.Tests
         }
 
         [Test]
-        public void Get_Executables_Than_Sort_With_DogAndWeather_Keywords_Must_Return_DoggoCheck_AndWeatheCheck()
-        {
-            var executables = 
-            SpeechToTextRequester.CreateStaticExecutables();
-
-            var sortedExecutables = 
-            ResultAnaliser.SortRuntimeExecutables(executables, new List<string>() { "dog", "weather" });
-
-            Assert.IsTrue(sortedExecutables.Count() == 2);
-
-            Assert.IsInstanceOf<DoggoCheck>(sortedExecutables.Last());
-
-            Assert.IsInstanceOf<WeatherCheck>(sortedExecutables.First());
-        }
-
-        [Test]
-        public async Task Get_Executables_Than_There_Are_More_Than_Four_Of_Them()
+        public async Task Get_Executables_Than_There_Are_More_Than_Three_Of_Them()
         {
             var executables = await
             new ResultAnaliser().ReadAvailableExecutables();
@@ -52,7 +37,7 @@ namespace Alexa_proj.Tests
             TestContext.WriteLine("TearDown");
         }
 
-        [OneTimeSetUp]
+        [OneTimeTearDown]
         public void OneTimeTearDown()
         {
             TestContext.WriteLine("One time TearDown");

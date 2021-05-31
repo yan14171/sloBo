@@ -45,13 +45,11 @@ namespace Alexa_proj.Tests
         }
 
         [Test]
-        public async Task Dynamic_Setup_Returns_List_With_1_Song_Request()
+        public void CreateExecutables_Returns_More_Than_4_Executables()
         {
-           var executablesList = await SpeechToTextRequester.DynamicAPIsSetup("");
+           var executablesList = SpeechToTextRequester.CreateExecutables();
 
-            Assert.AreEqual(executablesList.Count(), 1);
-
-            StringAssert.Contains("SongCheck", executablesList.First().ExecutableFunction.FunctionName);
+            Assert.Greater(executablesList.Count(), 3);
         }
 
         [TearDown]
@@ -60,7 +58,7 @@ namespace Alexa_proj.Tests
             TestContext.WriteLine("TearDown");
         }
 
-        [OneTimeSetUp]
+        [OneTimeTearDown]
         public void OneTimeTearDown()
         {
             TestContext.WriteLine("One time TearDown");

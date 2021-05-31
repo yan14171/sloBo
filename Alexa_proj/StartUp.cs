@@ -18,9 +18,8 @@ namespace Alexa_proj
             Console.CursorVisible = false;
             Console.OutputEncoding = Encoding.UTF8;
             Console.SetWindowSize(SCREEN_SIZEX, SCREEN_SIZEY);
-            contextFactory = new FunctionalContextFactory();
 
-            Task.Run(() => new SpeechToTextRequester().Recognise(@"Resources/Files/dog.wav"));
+            Task.Run(() => new SpeechToTextRequester().Recognise(@"Resources/Files/silent.wav"));
         }
 
         public static bool IsWait = false;
@@ -34,8 +33,6 @@ namespace Alexa_proj
         public static List<Menu> Menus = new List<Menu>();
 
         static int _menuiterator = 0;
-
-        public static FunctionalContextFactory contextFactory;
 
         public static int MenuIterator {
             get { return _menuiterator; }

@@ -7,6 +7,7 @@ using IBM.Cloud.SDK.Core.Http;
 using IBM.Watson.SpeechToText.v1;
 using IBM.Watson.SpeechToText.v1.Model;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -91,16 +92,21 @@ namespace Alexa_proj
             return RecognitionResults;
         }
 
-        private static string GetWatsonAlternativeTranscript(string ConcreteId)
+        private static string TryGetWatsonAlternativeTranscript(string ConcreteId)
         {
             DetailedResponse<RecognitionJob> WatsonResponse;
-
-            while (true)
+            try
             {
-                WatsonResponse = stt.CheckJob(ConcreteId);
-                if (WatsonResponse.Result.Status == "completed") break;
+                while (true)
+                {
+                    WatsonResponse = stt.CheckJob(ConcreteId);
+                    if (WatsonResponse.Result.Status == "completed") break;
+                }
             }
-
+            catch (ArgumentException)
+            {
+                return "";
+            }
             var LastJobResults = WatsonResponse.Result.Results[0].Results;
 
             var RecognitionResult =
@@ -139,7 +145,7 @@ namespace Alexa_proj
         {
             List<ExecutableModel> returnedExecutables = CreateExecutables();
 
-            using (var unitOfWork = new UnitOfWork(StartUp.contextFactory.CreateDbContext()))
+            using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
             {
                 unitOfWork.Executables.RemoveRange(unitOfWork.Executables.GetAll());
 
@@ -309,7 +315,7 @@ namespace Alexa_proj
                 SongModel.Keywords.Add(new Keyword { KeywordValue = item });
             }
 
-            SongModel.ExecutableFunction.FunctionResult.ResultValue = GetWatsonAlternativeTranscript(_watsonConcreteId);
+            SongModel.ExecutableFunction.FunctionResult.ResultValue = TryGetWatsonAlternativeTranscript(_watsonConcreteId);
 
             var returnedExecutables = new List<ExecutableModel>()
             {

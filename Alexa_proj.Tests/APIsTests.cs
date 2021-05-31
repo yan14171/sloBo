@@ -14,6 +14,7 @@ namespace Alexa_proj.Tests
     {
         ExecutableModel Weathermodel;
 
+        [OneTimeSetUp]
         public void OneTimeSetup()
         {
             TestContext.WriteLine("One time setup");
@@ -56,7 +57,7 @@ namespace Alexa_proj.Tests
             TestContext.WriteLine("TearDown");
         }
 
-        [OneTimeSetUp]
+        [OneTimeTearDown]
         public void OneTimeTearDown()
         {
             TestContext.WriteLine("One time TearDown");
@@ -107,9 +108,9 @@ namespace Alexa_proj.Tests
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                return true;
             }
 
             //Step 7: If the value doesn't become true at the end of foreach loop, the value is returned.
