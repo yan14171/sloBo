@@ -161,3 +161,24 @@ E:\stuff\j\Alexa_proj\Alexa_proj.Tests\obj\Release\net5.0-windows7.0\Alexa_proj.
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\obj\Release\net5.0-windows7.0\ref\Alexa_proj.Tests.dll
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\obj\Release\net5.0-windows7.0\Alexa_proj.Tests.pdb
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\obj\Release\net5.0-windows7.0\Alexa_proj.Tests.genruntimeconfig.cache
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\appsettings.json
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\corona.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\dog.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\doggo box.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\dogo.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\give me a dog.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\listen.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\patients.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\play(1).wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\play(2).wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\play.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\RecordingFile.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\weather.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Menus\MainMenu.txt
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Menus\RecordMenu.txt
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Text\Doggo.txt
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Text\DoggoOpening.txt
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Text\Main_ScreenTitle.txt
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Text\Processing.txt
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Text\RecordingResults.txt
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Text\RecordingScreenMicrophone.txt
