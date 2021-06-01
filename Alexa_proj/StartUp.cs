@@ -96,6 +96,7 @@ namespace Alexa_proj
 
         static void Main(string[] args)
         {
+
             #region SetUp
 
 
@@ -131,13 +132,13 @@ namespace Alexa_proj
                 Menu.OnScreenChange += Menu_OnScreenChange;
 
                 Menus[MenuIterator].Show();
-                
+
                 Thread KeyL = new Thread(() =>
-             
+
                 KeyLoop());
-                
+
                 KeyL.Start();
-                
+
                 MenuControl().GetAwaiter().GetResult();
             }
             catch (Exception ex)
