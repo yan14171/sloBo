@@ -35,13 +35,13 @@ namespace Alexa_proj.Tests
         [TestCase("dog")]
         [TestCase("corona")]
         //[TestCase("doggo box")]
-        [TestCase("give me a dog")]
+        [TestCase("play")]
         [Test]
         public async Task Requester_Recognise_On_Test_File_Than_Return_File_Name(string fileName)
         {
             var RecogniseResult = await _requester.Recognise($@"Resources/Files/{fileName}.wav");
 
-            Assert.AreEqual(RecogniseResult.First(), fileName);
+            CollectionAssert.Contains(RecogniseResult, fileName);
         }
 
         [Test]
