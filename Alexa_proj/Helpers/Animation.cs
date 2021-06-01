@@ -14,12 +14,14 @@ namespace Alexa_proj
         public static void StartAnimation()
         {
             StartUp.IsWait = true;
-            AnimStop = new CancellationTokenSource();
-            AnimStopToken = AnimStop.Token;
-            Anim = new Task(() => Animate(AnimStopToken), AnimStopToken);
-            Anim.Start();
-            
 
+            AnimStop = new CancellationTokenSource();
+
+            AnimStopToken = AnimStop.Token;
+
+            Anim = new Task(() => Animate(AnimStopToken), AnimStopToken);
+
+            Anim.Start();
         }
 
         public static void StopAnimation()
@@ -34,9 +36,9 @@ namespace Alexa_proj
             }
 
             while (true)
+            {
                 if (Anim.Status == TaskStatus.RanToCompletion || Anim.Status == TaskStatus.Canceled) break;
-
-                StartUp.CurrentMenu.MainWindow.Draw();
+            }
             StartUp.IsWait = false;
         }
 
@@ -44,15 +46,15 @@ namespace Alexa_proj
         {
             int OriginalX = 18;
             int OriginalY = 5;
+
             Point DrawPoint = new Point()
             {
                 X = OriginalX,
                 Y = OriginalY
             };
+
             ConsoleRectangle LoadingRectangle =
              new ConsoleRectangle(0, 0, DrawPoint, ConsoleColor.Green, new[] { "" }, 0);
-
-
 
             using (var reader = new StreamReader(@"Resources/Text/Processing.txt"))
             {
@@ -65,31 +67,28 @@ namespace Alexa_proj
                      )
                      );
             }
+
             try
             {
                 while (true)
                 {
                     token.ThrowIfCancellationRequested();
+
                     while (DrawPoint.X < StartUp.SCREEN_SIZEX - OriginalX - 2)
                     {
-                        StartUp.CurrentMenu.DynamicShow
-                        (
-                           LoadingRectangle
-                        );
-                        token.ThrowIfCancellationRequested();
-                        Thread.Sleep(50);
+                        DrawTileRectangle(LoadingRectangle);
+
                         DrawPoint.X += 2;
                     }
+
+                    token.ThrowIfCancellationRequested();
                     LoadingRectangle.BorderColor++;
                     DrawPoint.X -= 2;
+
                     while (DrawPoint.X > OriginalX)
                     {
-                        StartUp.CurrentMenu.DynamicShow
-                        (
-                           LoadingRectangle
-                        );
-                        token.ThrowIfCancellationRequested();
-                        Thread.Sleep(50);
+                        DrawTileRectangle(LoadingRectangle);
+
                         DrawPoint.X -= 2;
                     }
                     LoadingRectangle.BorderColor++;
@@ -97,10 +96,15 @@ namespace Alexa_proj
                 }
             }
             catch { }
-
         }
 
-
-
+        private static void DrawTileRectangle(ConsoleRectangle LoadingRectangle)
+        {
+            StartUp.CurrentMenu.DynamicShow
+            (
+               LoadingRectangle
+            );
+            Thread.Sleep(50);
+        }
     }
 }

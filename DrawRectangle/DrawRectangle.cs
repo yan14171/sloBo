@@ -152,21 +152,18 @@ namespace DrawRectangle
 
         public void Alert(int Y)
         {
-
             Alert(FileText, Y);
-
         }
         public void Alert()
         {
             Console.SetCursorPosition(hLocation.X + 1, FileTextY);
             Console.Write(this.FileText);
-            
         }
 
         public void AlertTitle()
         {
             Console.ForegroundColor = this.TitleColor;
-            var splited = FileText.Split(new char[] { '\n', '\r' });
+            var splited = FileText.Split(new char[] { '\n' });
             for(int i = 0; i<splited.Length;i++)
             {
                 Console.SetCursorPosition(hLocation.X + 1 , FileTextY + i + 1);

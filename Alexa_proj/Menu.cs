@@ -47,10 +47,9 @@ namespace Alexa_proj
                     item?.Draw();
                     item?.AlertTitle();
                 }
-                await (this.ExecutionManager?.Execute() ?? Task.CompletedTask);
                 Console.SetCursorPosition(0, 0);
                 OnScreenChange?.Invoke(this, new EventArgs());
-              
+                await (this.ExecutionManager?.Execute() ?? Task.CompletedTask);
             }
         }
         public void DynamicShow(ConsoleRectangle injectedScreen, bool isDrawn = true)

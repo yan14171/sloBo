@@ -20,8 +20,6 @@ namespace Alexa_proj
         {
             List<ExecutableModel> sortedApiExecutables = await GetSortedExecutables();
 
-            Animation.StopAnimation();
-
             ShowExecutables(sortedApiExecutables);
 
             StartUp.HardIterate();
@@ -107,7 +105,7 @@ namespace Alexa_proj
                   })
                   .ToList();
 
-            return sorted;
+            return sorted.Count > 0 ? sorted : new List<ExecutableModel>() { new EmptyCheck() };
 
         }
     }

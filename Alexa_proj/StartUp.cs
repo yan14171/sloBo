@@ -34,55 +34,56 @@ namespace Alexa_proj
 
         static int _menuiterator = 0;
 
-        public static int MenuIterator {
-            get { return _menuiterator; }
-            private set { _menuiterator = value <= Menus.Count() - 1 ? value : 0; }
-        }
-
-        static Menu _currentMenu;
-
-        public static Menu CurrentMenu
-        {
-            get { return _currentMenu ?? new Menu(); }
-            set { _currentMenu = value;}
-        }
-
-        static void KeyLoop()
-        {
-            ConsoleKeyInfo Pressed;
-
-            while (true)
-            {
-                
-                    Pressed = Console.ReadKey(intercept: true);
-
-                if (!IsWait)
-                {
-                    switch (Pressed.Key)
-                    {
-                        case ConsoleKey.Enter:
-                            {
-                                MenuIterator++;
-                                OnEnterPressed?.Invoke(new object(), new EventArgs());
-                                break;
-                            }
-                        case ConsoleKey.Escape:
-                            {
-                                Environment.Exit(0);
-                                break;
-                            }
-
-                    }
-                }
-   
+            public static int MenuIterator {
+                get { return _menuiterator; }
+                private set { _menuiterator = value <= Menus.Count() - 1 ? value : 0; }
             }
-        }
+
+            static Menu _currentMenu;
+
+            public static Menu CurrentMenu
+            {
+                get { return _currentMenu ?? new Menu(); }
+                set { _currentMenu = value;}
+            }
+
+            static void KeyLoop()
+            {
+                ConsoleKeyInfo Pressed;
+
+                while (true)
+                {
+                
+                        Pressed = Console.ReadKey(intercept: true);
+
+                    if (!IsWait)
+                    {
+                        switch (Pressed.Key)
+                        {
+                            case ConsoleKey.Enter:
+                                {
+                                    MenuIterator++;
+                                    OnEnterPressed?.Invoke(new object(), new EventArgs());
+                                    Thread.Sleep(100);
+                                    break;
+                                }
+                            case ConsoleKey.Escape:
+                                {
+                                    Environment.Exit(0);
+                                    break;
+                                }
+
+                        }
+                    }
+   
+                }
+            }
 
         static async Task MenuControl()
         {
             while (true)
             {
-                if (!Menus[MenuIterator].IsShown)
+                if(!IsWait)
                     await Menus[MenuIterator].Show();
             }
         

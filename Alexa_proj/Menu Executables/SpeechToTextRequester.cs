@@ -43,7 +43,7 @@ namespace Alexa_proj
 
             Animation.StartAnimation();
 
-           var recognitionResults = await Recognise(@"Resources/Files/play(2).wav");
+            var recognitionResults = await Recognise(@"Resources/Files/silent.wav");
 
             await SearchEngineSetup();
 
@@ -53,7 +53,9 @@ namespace Alexa_proj
                 writer.Flush();
             }
 
-           StartUp.HardIterate();
+            StartUp.HardIterate();
+
+            Animation.StopAnimation();
         }
 
         public async Task<IEnumerable<string>> Recognise( string filename = @"Resources/Files/RecordingFile.wav", string fileType = "wav" )
@@ -109,9 +111,16 @@ namespace Alexa_proj
             }
             var LastJobResults = WatsonResponse.Result.Results[0].Results;
 
-            var RecognitionResult =
-                LastJobResults[0].Alternatives[0].Transcript;
+            string RecognitionResult;
 
+            try
+            {
+                  RecognitionResult = LastJobResults[0].Alternatives[0].Transcript;
+            }
+            catch(Exception ex)
+            {
+                return "";
+            }
             return RecognitionResult;
         }
 

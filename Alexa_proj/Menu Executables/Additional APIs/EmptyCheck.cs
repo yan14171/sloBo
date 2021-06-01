@@ -1,8 +1,12 @@
-﻿using Alexa_proj.Data_Control.Models;
+﻿using Alexa_proj.Data_Control;
+using Alexa_proj.Data_Control.Models;
+using Alexa_proj.Repositories;
+using DrawRectangle;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Alexa_proj.Additional_APIs
@@ -11,74 +15,80 @@ namespace Alexa_proj.Additional_APIs
     {
         public override async Task Execute()
         {
-            var DrawnRectangle =
-                 new DrawRectangle.ConsoleRectangle(
+
+            var notFoundPage =
+                 new ConsoleRectangle(
                         20, 3, new DrawRectangle.Point() { X = 7, Y = 1 },
                         ConsoleColor.Black,
                          new string[] { "Sorry, I couldn't find anything on your request.\nHere are my current functions:" },
                         0
                         );
 
-            StartUp.CurrentMenu.DynamicShow(
-               DrawnRectangle
-                );
-             
-            Dictionary<string, List<string>> tempResults;
+            SetUpTable(notFoundPage);
 
-            tempResults = GetAvailableFunctions();
+            notFoundPage.BorderColor = ConsoleColor.Green;
 
-            #region HardCodedTableTop
-            DrawnRectangle.BorderColor = ConsoleColor.Black;
-            DrawnRectangle.Width = 25;
-            DrawnRectangle.Location.X = 1;
-            DrawnRectangle.FileText =
-                $"Name:";
-            StartUp.CurrentMenu.DynamicShow(
-            DrawnRectangle
-                           );
-            DrawnRectangle.Width = 30;
-            DrawnRectangle.Location.X = 25;
-            DrawnRectangle.FileText =
-                $"Supreme keyword:";
-            StartUp.CurrentMenu.DynamicShow(
-            DrawnRectangle
-                           );
-            DrawnRectangle.Location.Y += 4;
-            DrawnRectangle.FileTextY += 4;
-            #endregion
+            var Executables = await GetExecutables();
 
-            DrawnRectangle.BorderColor = ConsoleColor.Green;
+            SetUpExecutables(notFoundPage, Executables);
+        }
 
-            foreach (var item in tempResults)
+        private void SetUpExecutables(ConsoleRectangle notFoundPage, IEnumerable<ExecutableModel> executables)
+        {
+            foreach (var item in executables)
             {
-                DrawnRectangle.Width = 25;
-                DrawnRectangle.Location.X = 1;
-                DrawnRectangle.FileText =
-                    $"{item.Key.Substring(item.Key.Length - 16)}";
+                notFoundPage.Width = 25;
+                notFoundPage.Location.X = 1;
+                notFoundPage.FileText =
+                    $"{item.ExecutableName}";
                 StartUp.CurrentMenu.DynamicShow(
-                DrawnRectangle
+                notFoundPage
                                );
-                DrawnRectangle.Width = 20;
-                DrawnRectangle.Location.X = 25;
-                DrawnRectangle.FileText =
-                    $"{item.Value[0]}";
+                notFoundPage.Width = 20;
+                notFoundPage.Location.X = 25;
+                notFoundPage.FileText =
+                    $"{item.Keywords[0].KeywordValue}";
                 StartUp.CurrentMenu.DynamicShow(
-                DrawnRectangle
+                notFoundPage
                                );
-                DrawnRectangle.Location.Y += 5;
-                DrawnRectangle.FileTextY += 5;
+                notFoundPage.Location.Y += 5;
+                notFoundPage.FileTextY += 5;
             }
         }
 
-        private static Dictionary<string, List<string>> GetAvailableFunctions()
+        private void SetUpTable(ConsoleRectangle notFoundPage)
         {
-            Dictionary<string, List<string>> tempResults;
-            using (var reader = new StreamReader(@"Resources/Text/Functions.txt"))
+            notFoundPage.BorderColor = ConsoleColor.Black;
+            notFoundPage.Width = 25;
+            notFoundPage.Location.X = 1;
+            notFoundPage.FileText =
+                $"Name:";
+            StartUp.CurrentMenu.DynamicShow(
+            notFoundPage
+                           );
+            notFoundPage.Width = 30;
+            notFoundPage.Location.X = 25;
+            notFoundPage.FileText =
+                $"Supreme keyword:";
+            StartUp.CurrentMenu.DynamicShow(
+            notFoundPage
+                           );
+            notFoundPage.Location.Y += 4;
+            notFoundPage.FileTextY += 4;
+        }
+
+        private async Task<List<ExecutableModel>> GetExecutables()
+        {
+            List<ExecutableModel> models;
+
+             using (var unitOfWork = new UnitOfWork(new FunctionalContextFactory().CreateDbContext()))
             {
-                tempResults = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(reader.ReadToEnd());
+                models = (await (unitOfWork.Executables as ExecutableRepository)
+                    .GetStaticExecutablesWithKeywordsAsync())
+                    .ToList();
             }
 
-            return tempResults;
+            return models;
         }
     }
 
