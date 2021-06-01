@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Alexa_proj.Additional_APIs.CoronaCheck">
+    <Position X="12" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\CoronaCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.CoronaInfo">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Alexa_proj.Additional_APIs.CoronaInfo.GlobalInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\CoronaInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.CoronaInfo.CountryInfo" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\CoronaInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAABAAA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\CoronaInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.DoggoCheck">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABQAAEAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\DoggoCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.DoggoInfo">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Alexa_proj.Additional_APIs.DoggoInfo.Weight" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\DoggoInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.DoggoInfo.Height" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\DoggoInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.DoggoInfo.Breed" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\DoggoInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAARAQAAAAAAAAAAIAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\DoggoInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.EmptyCheck">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAQAAABAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\EmptyCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.ExecutableInfo">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\ExecutableInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.SongCheck">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAQAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\SongCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.SongInfo">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Alexa_proj.Additional_APIs.SongInfo.Artist" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\SongInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.SongInfo.Album" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\SongInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.SongInfo.Datum" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\SongInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAQAAIAAAA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\SongInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.WeatherCheck">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAUAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu Executables\Additional APIs\WeatherCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Additional_APIs.WeatherInfo">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Coord" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Weather" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Main" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Wind" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Clouds" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Alexa_proj.Additional_APIs.WeatherInfo.Sys" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Menu Executables\Additional APIs\WeatherInfo.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAABAAAYEAABBEAAAAAAQAAABABgQ=</HashCode>
+      <FileName>Menu Executables\Additional APIs\WeatherInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.ResultAnaliser">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAgAgAAAAAAQAAAACAAAAAAAAAACAAAABAAAAAAA=</HashCode>
+      <FileName>Menu Executables\ResultAnaliser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.SoundCapturer">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAUAEAAUAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu Executables\SoundCapturer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.SpeechToTextRequester">
+    <Position X="18.25" Y="2.25" Width="1.5" />
+    <InheritanceLine Type="Alexa_proj.Data_Control.Models.ExecutableModel" FixedFromPoint="true">
+      <Path>
+        <Point X="15.5" Y="0.5" />
+        <Point X="15.5" Y="0.377" />
+        <Point X="20.125" Y="0.377" />
+        <Point X="20.125" Y="6.425" />
+        <Point X="19" Y="6.425" />
+        <Point X="19" Y="6.05" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQABQAAAAAAAAAIAABQyAAAACAACAIAAA=</HashCode>
+      <FileName>Menu Executables\SpeechToTextRequester.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Data_Control.Models.ExecutableModel">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

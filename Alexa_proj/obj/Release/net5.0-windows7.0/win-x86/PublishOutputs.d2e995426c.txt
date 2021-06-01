@@ -1,0 +1,37 @@
+E:\stuff\j\sloBo 0.1.3_x32\Alexa_proj.pdb
+E:\stuff\j\sloBo 0.1.3_x32\appsettings.json
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\corona.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\dog.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\doggo box.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\dogo.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\give me a dog.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\listen.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\patients.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\play(1).wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\play(2).wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\play.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\RecordingFile.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\silent.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Files\weather.wav
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Menus\MainMenu.txt
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Menus\RecordMenu.txt
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Text\Doggo.txt
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Text\DoggoOpening.txt
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Text\Main_ScreenTitle.txt
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Text\Processing.txt
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Text\RecordingResults.txt
+E:\stuff\j\sloBo 0.1.3_x32\Resources\Text\RecordingScreenMicrophone.txt
+E:\stuff\j\sloBo 0.1.3_x32\clrcompression.dll
+E:\stuff\j\sloBo 0.1.3_x32\clrjit.dll
+E:\stuff\j\sloBo 0.1.3_x32\coreclr.dll
+E:\stuff\j\sloBo 0.1.3_x32\mscordaccore.dll
+E:\stuff\j\sloBo 0.1.3_x32\D3DCompiler_47_cor3.dll
+E:\stuff\j\sloBo 0.1.3_x32\PenImc_cor3.dll
+E:\stuff\j\sloBo 0.1.3_x32\PresentationNative_cor3.dll
+E:\stuff\j\sloBo 0.1.3_x32\vcruntime140_cor3.dll
+E:\stuff\j\sloBo 0.1.3_x32\wpfgfx_cor3.dll
+E:\stuff\j\sloBo 0.1.3_x32\Microsoft.Data.SqlClient.SNI.dll
+E:\stuff\j\sloBo 0.1.3_x32\Microsoft.Data.SqlClient.SNI.pdb
+E:\stuff\j\sloBo 0.1.3_x32\Alexa_proj.DataAccess.pdb
+E:\stuff\j\sloBo 0.1.3_x32\DrawRectangle.pdb
+E:\stuff\j\sloBo 0.1.3_x32\Alexa_proj.exe

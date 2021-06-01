@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Alexa_proj.Additional_APIs
 {
-    public class CoronaInfo
+    public class CoronaInfo : ExecutableInfo
     {
-        public class GlobalInfo : ExecutableInfo
+        public class GlobalInfo 
         {
             public int NewConfirmed { get; set; }
             public int TotalConfirmed { get; set; }

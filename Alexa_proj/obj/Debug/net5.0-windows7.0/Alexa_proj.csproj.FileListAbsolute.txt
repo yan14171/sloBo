@@ -100,3 +100,4 @@ E:\stuff\j\Alexa_proj\Alexa_proj\bin\Debug\net5.0-windows7.0\Resources\Text\Reco
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Debug\net5.0-windows7.0\Resources\Text\RecordingScreenMicrophone.txt
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Debug\net5.0-windows7.0\appsettings.json
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Debug\net5.0-windows7.0\Resources\Text\Doggo.txt
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Debug\net5.0-windows7.0\Resources\Files\silent.wav

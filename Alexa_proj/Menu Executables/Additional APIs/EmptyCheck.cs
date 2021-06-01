@@ -18,11 +18,17 @@ namespace Alexa_proj.Additional_APIs
 
             var notFoundPage =
                  new ConsoleRectangle(
-                        20, 3, new DrawRectangle.Point() { X = 7, Y = 1 },
+                        20, 3, new Point() { X = 7, Y = 1 },
                         ConsoleColor.Black,
                          new string[] { "Sorry, I couldn't find anything on your request.\nHere are my current functions:" },
                         0
                         );
+
+            StartUp.CurrentMenu.DynamicShow(notFoundPage);
+
+            notFoundPage.Location.Y += 5;
+
+            notFoundPage.FileTextY += 5;
 
             SetUpTable(notFoundPage);
 

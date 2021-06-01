@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Alexa_proj.Data_Control.FunctionalContext">
+    <Position X="7.25" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAIAEAAAAAAQAAAAAAAAgAA=</HashCode>
+      <FileName>Data control\DatabaseContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Data_Control.FunctionalContextFactory">
+    <Position X="7" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data control\DatabaseContext.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alexa_proj.Data_Control.Models.ExecutableModel">
+    <Position X="3.25" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQEAAAAAgAQAAAAAAAAAAAAAAEAAAAAAAAAAgAA=</HashCode>
+      <FileName>Models\ExecutableModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.Data_Control.Models.FunctionResult">
+    <Position X="0.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAoAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Models\FunctionResult.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Function" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Alexa_proj.Data_Control.Models.Function">
+    <Position X="3" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAQCAAAAAAAAACAggAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Function.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Executable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Alexa_proj.Data_Control.Models.Keyword">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAgAgAAAAAAAIAAAAAgAAAAA=</HashCode>
+      <FileName>Models\Keyword.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Executable" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="Alexa_proj.DataAccess.Repositories.IExecutableRepository">
+    <Position X="11" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Repositories\IExecutableRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Alexa_proj.DataAccess.Repositories.IRepository&lt;T&gt;">
+    <Position X="11.75" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAIAAAAAgAAAIAEAIA=</HashCode>
+      <FileName>Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Alexa_proj.DataAccess.Repositories.IUnitOfWork">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Executables" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

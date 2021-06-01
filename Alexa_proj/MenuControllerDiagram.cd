@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Alexa_proj.Animation">
+    <Position X="8" Y="4.25" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAEAAQAAACAAQAAAAAAAAEAQAA=</HashCode>
+      <FileName>Helpers\Animation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Alexa_proj.StartUp">
+    <Position X="8" Y="1" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAwAEgAAAAIACAAAQCAQCAAAAABAACAAA=</HashCode>
+      <FileName>StartUp.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_currentMenu" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="Menus" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Alexa_proj.Menu">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAIAAAAAAAAAAgAAEAAAAAAAEAAAAABAAQAAAIAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ExecutionManager" />
+      <Field Name="MainWindow" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="Windows" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Alexa_proj.Repositories.ExecutableRepository">
+    <Position X="1.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAAAAAAAAACAAgAQAAAAAAA=</HashCode>
+      <FileName>Repositories\ExecutableRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alexa_proj.Repositories.UnitOfWork">
+    <Position X="2" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACAABAIAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Executables" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alexa_proj.Repositories.Repository&lt;T&gt;">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAACAAIAAAAAAAABAEAAAAIAAAAAgAAAIAEIIA=</HashCode>
+      <FileName>Repositories\Repository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Alexa_proj.Data_Control.Models.ExecutableModel">
+    <Position X="16" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DrawRectangle.ConsoleRectangle">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="Alexa_proj.DataAccess.Repositories.IExecutableRepository">
+    <Position X="4.25" Y="4.5" Width="2.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
