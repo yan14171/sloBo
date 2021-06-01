@@ -11,6 +11,7 @@ E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\play(2).wav
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\play.wav
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\RecordingFile.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\silent.wav
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\weather.wav
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Menus\MainMenu.txt
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Menus\RecordMenu.txt
