@@ -14,7 +14,7 @@
    "Windows":[
       {
          "TitleColor":15,
-         "FileText":"\r\n                                                  \r\n                                                  \r\n                                                  \r\n                       `..`                       \r\n                    +hNMMMMmy:                    \r\n                  `sdMMMMMMMmyo                   \r\n                  oohMMMMMMMmoo+                  \r\n                 .++yMMMMMMMd+++                  \r\n                 .ooyMMMMMMMmooo                  \r\n                 .ooyMMMMMMMmooo                  \r\n             /dd/.sshMMMMMMMmsss.ydy              \r\n             +MM+.ooyMMMMMMMdooo-dMd              \r\n             /MM`.MMMMMMMMMMMMMm yMd              \r\n             `NMo /NMMMMMMMMMMm-.NM+              \r\n              :NMo `omMMMMMMd+`:mMy               \r\n               .dMmo. `-::-``/hMN+                \r\n                 :yNMNdyyyhmMMd+`                 \r\n                    ./+NMMd+-`                    \r\n                       mMMs                       \r\n                       mMMs                       \r\n                 `ossssNMMmsssso`                 \r\n                 .dNNNNNNNNNNNNm.                 \r\n                                                  \r\n                                                  \r\n                                                  \r\n",
+         "FileText":"\n                                                  \n                                                  \n                                                  \n                       `..`                       \n                    +hNMMMMmy:                    \n                  `sdMMMMMMMmyo                   \n                  oohMMMMMMMmoo+                  \n                 .++yMMMMMMMd+++                  \n                 .ooyMMMMMMMmooo                  \n                 .ooyMMMMMMMmooo                  \n             /dd/.sshMMMMMMMmsss.ydy              \n             +MM+.ooyMMMMMMMdooo-dMd              \n             /MM`.MMMMMMMMMMMMMm yMd              \n             `NMo /NMMMMMMMMMMm-.NM+              \n              :NMo `omMMMMMMd+`:mMy               \n               .dMmo. `-::-``/hMN+                \n                 :yNMNdyyyhmMMd+`                 \n                    ./+NMMd+-`                    \n                       mMMs                       \n                       mMMs                       \n                 `ossssNMMmsssso`                 \n                 .dNNNNNNNNNNNNm.                 \n                                                  \n                                                  \n                                                  \n",
          "FileTextY":0,
          "Location":{
             "X":6,
@@ -26,7 +26,7 @@
       },
       {
          "TitleColor":15,
-         "FileText":"Recording\r\n",
+         "FileText":"Recording\n",
          "FileTextY":27,
          "Location":{
             "X":26,

@@ -1,0 +1,28 @@
+E:\stuff\j\sloBo 0.1.6_logged\Alexa_proj.pdb
+E:\stuff\j\sloBo 0.1.6_logged\appsettings.json
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\corona.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\dog.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\doggo box.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\dogo.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\give me a dog.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\listen.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\patients.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\play(1).wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\play(2).wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\play.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\RecordingFile.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\silent.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Files\weather.wav
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Menus\MainMenu.txt
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Menus\RecordMenu.txt
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Text\Doggo.txt
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Text\DoggoOpening.txt
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Text\Main_ScreenTitle.txt
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Text\Processing.txt
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Text\RecordingResults.txt
+E:\stuff\j\sloBo 0.1.6_logged\Resources\Text\RecordingScreenMicrophone.txt
+E:\stuff\j\sloBo 0.1.6_logged\Microsoft.Data.SqlClient.SNI.dll
+E:\stuff\j\sloBo 0.1.6_logged\Microsoft.Data.SqlClient.SNI.pdb
+E:\stuff\j\sloBo 0.1.6_logged\Alexa_proj.DataAccess.pdb
+E:\stuff\j\sloBo 0.1.6_logged\DrawRectangle.pdb
+E:\stuff\j\sloBo 0.1.6_logged\Alexa_proj.exe
