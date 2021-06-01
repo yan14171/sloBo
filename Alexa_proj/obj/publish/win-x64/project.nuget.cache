@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/PIfqfuXGjakB4JkNmhIRB+DmGeuWD/H/tHZjXISTw/KbYslP3YbMnoG7dQIFPvQqHArYgSgNWKPFVjPgG3rXw==",
+  "dgSpecHash": "4/xRTljXjPD6jfUoaHZ06er0MbLZUXjAmJ+b/R6VPaueGvXLlkBIiRtV333WGclgAYubm0BEf+znVsDATCLr3w==",
   "success": true,
   "projectFilePath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\Alexa_proj.csproj",
   "expectedPackageFiles": [
@@ -189,10 +189,7 @@
     "C:\\Users\\nonam\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\nonam\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\nonam\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\nonam\\.nuget\\packages\\wdc.system.net.http.formatting.netstandard\\1.0.7\\wdc.system.net.http.formatting.netstandard.1.0.7.nupkg.sha512",
-    "C:\\Users\\nonam\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.1\\microsoft.netcore.app.runtime.win-x64.5.0.1.nupkg.sha512",
-    "C:\\Users\\nonam\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.1.nupkg.sha512",
-    "C:\\Users\\nonam\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.1\\microsoft.aspnetcore.app.runtime.win-x64.5.0.1.nupkg.sha512"
+    "C:\\Users\\nonam\\.nuget\\packages\\wdc.system.net.http.formatting.netstandard\\1.0.7\\wdc.system.net.http.formatting.netstandard.1.0.7.nupkg.sha512"
   ],
   "logs": []
 }

@@ -101,3 +101,4 @@ E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\Resources\Text\Re
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\Resources\Text\RecordingScreenMicrophone.txt
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\appsettings.json
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\Resources\Files\silent.wav
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\Resources\Files\ll.wav

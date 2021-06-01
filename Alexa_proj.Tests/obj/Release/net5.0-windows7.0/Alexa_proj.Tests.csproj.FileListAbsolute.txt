@@ -183,3 +183,4 @@ E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\T
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Text\RecordingResults.txt
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Text\RecordingScreenMicrophone.txt
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\silent.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\Resources\Files\ll.wav

@@ -40,6 +40,9 @@ namespace Alexa_proj
 
         public void ShowExecutables(IEnumerable<ExecutableModel> sortedApiExecutables)
         {
+            while (StartUp.Menus.Count > 4)
+                StartUp.Menus.RemoveAt(4);
+
             foreach (var item in sortedApiExecutables)
             {
                 var m = new Menu();

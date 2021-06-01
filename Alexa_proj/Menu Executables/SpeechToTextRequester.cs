@@ -44,7 +44,7 @@ namespace Alexa_proj
 
             Animation.StartAnimation();
 
-            var recognitionResults = await Recognise(@"Resources/Files/RecordingFile.wav");
+            var recognitionResults = await Recognise(@"Resources/Files/ll.wav");
 
             await SearchEngineSetup();
 
@@ -83,7 +83,7 @@ namespace Alexa_proj
       contentType: $"audio/{fileType}",
       keywords: keywords,
       model: "en-US_NarrowbandModel",
-      keywordsThreshold: 0.2F,
+      keywordsThreshold: 0.3F,
       speechDetectorSensitivity: 0.8F,
       backgroundAudioSuppression: 0.5F,
       timestamps: true

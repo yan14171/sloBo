@@ -6,6 +6,7 @@ E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\publish\Res
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\publish\Resources\Files\dogo.wav
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\publish\Resources\Files\give me a dog.wav
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\publish\Resources\Files\listen.wav
+E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\publish\Resources\Files\ll.wav
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\publish\Resources\Files\patients.wav
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\publish\Resources\Files\play(1).wav
 E:\stuff\j\Alexa_proj\Alexa_proj.Tests\bin\Release\net5.0-windows7.0\publish\Resources\Files\play(2).wav
