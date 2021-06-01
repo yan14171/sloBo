@@ -74,6 +74,8 @@ namespace Alexa_proj
                 .ToList();
             }
 
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
             var WatsonRecognitonJob = Task.Run(() => stt.CreateJob
           (
       audio: new MemoryStream(File.ReadAllBytes(filename)),
