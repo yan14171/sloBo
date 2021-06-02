@@ -25,8 +25,8 @@ namespace Alexa_proj.Additional_APIs
 
             if (songReport?.data?.Count < 1)
                 outputMessage = $"Sorry, I Couldn't find this song)\n Try again";
-
-                outputMessage = $"Playing {songReport.data[0].title_short} by {songReport.data[0].artist.name}";
+            else
+                outputMessage = $"Playing {songReport?.data[0]?.title_short} by {songReport?.data[0]?.artist.name}";
 
             StartUp.CurrentMenu.DynamicShow(
              new DrawRectangle.ConsoleRectangle(
@@ -38,7 +38,8 @@ namespace Alexa_proj.Additional_APIs
 
             Thread.Sleep(500);
 
-            OpenUrl(songReport.data[0].preview);
+            if (songReport?.data?.Count >= 1)
+                OpenUrl(songReport?.data[0]?.preview);
         }
 
         public string CreateSongRequest(string input)
