@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FBz36g4ltFWDRuy00y+eJOAXSZWfBxqV5yEPUlj3slJ4pJ2JhOYehjEqtUWcxeRUjAjh5DHvbNuJtVM+nncZDA==",
+  "dgSpecHash": "FDYRXnm8L7Qetwu3nUQosWQNAApIM9fxFZj/pXerUP7moPd+lbYmeZcwyrLRoR6CNYCxVxVqUFlWgBdPgoLmpg==",
   "success": true,
-  "projectFilePath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\Alexa_proj.DataAccess.csproj",
+  "projectFilePath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\sloBo.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nonam\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nonam\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",

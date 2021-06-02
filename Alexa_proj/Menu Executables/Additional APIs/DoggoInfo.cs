@@ -15,6 +15,11 @@ namespace Alexa_proj.Additional_APIs
     [Serializable]
     public class DoggoInfo : ExecutableInfo
     {
+        public DoggoInfo()
+        {
+
+        }
+
         public class Weight
         {
             public string imperial { get; set; }

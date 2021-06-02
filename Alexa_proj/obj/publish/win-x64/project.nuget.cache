@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4/xRTljXjPD6jfUoaHZ06er0MbLZUXjAmJ+b/R6VPaueGvXLlkBIiRtV333WGclgAYubm0BEf+znVsDATCLr3w==",
+  "dgSpecHash": "iHxngLpcU6bstmZdnJQ2vj8yXARlFPYf6zwWGlzhgfU4wMvnNE/oxzVMOUdMt7h3rAuhIpZclw9ee7h4ctImJg==",
   "success": true,
-  "projectFilePath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\Alexa_proj.csproj",
+  "projectFilePath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\sloBo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nonam\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nonam\\.nuget\\packages\\ibm.cloud.sdk.core\\1.2.0\\ibm.cloud.sdk.core.1.2.0.nupkg.sha512",

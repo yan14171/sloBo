@@ -19,13 +19,18 @@ namespace Alexa_proj.Additional_APIs
 
             ExecutableFunction.FunctionEndpoint += $"?q=track:\"{ExecutableFunction.FunctionResult.ResultValue}\"";
 
-            SongInfo songReport = await GetInfo<SongInfo>();
+            SongInfo songReport = await GetInfo<SongInfo>() ?? new SongInfo();
 
-            string outputMessage = $"Playing {songReport.data[0].title_short} by {songReport.data[0].artist.name}";
+            string outputMessage;
+
+            if (songReport?.data?.Count < 1)
+                outputMessage = $"Sorry, I Couldn't find this song)\n Try again";
+
+                outputMessage = $"Playing {songReport.data[0].title_short} by {songReport.data[0].artist.name}";
 
             StartUp.CurrentMenu.DynamicShow(
              new DrawRectangle.ConsoleRectangle(
-                 outputMessage.Length, 1, new DrawRectangle.Point() { X = 1, Y = 1 },
+                 outputMessage.Length, outputMessage.Split("\n").Count(), new DrawRectangle.Point() { X = 1, Y = 1 },
                  ConsoleColor.Green,
                  new[] { outputMessage },
                  0
@@ -38,15 +43,21 @@ namespace Alexa_proj.Additional_APIs
 
         public string CreateSongRequest(string input)
         {
-            string output =
-                String.Join(
-                    " ",
-                 input
-                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
-                .TakeWhile(n => n != "by")
-                .Where(n => !Keywords.Any(m => m.KeywordValue == n))
-                .Where(n => n != "%HESITATION")
-                );
+            string output;
+
+            try
+            { 
+                output =
+                    String.Join(
+                        " ",
+                     input
+                    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                    .TakeWhile(n => n != "by")
+                    .Where(n => !Keywords.Any(m => m.KeywordValue == n))
+                    .Where(n => n != "%HESITATION")
+                    );
+            }
+            catch { return "Never going to give you up"; }
 
             return output;
         }

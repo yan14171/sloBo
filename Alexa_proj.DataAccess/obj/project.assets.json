@@ -7697,9 +7697,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\Alexa_proj.DataAccess.csproj",
-      "projectName": "Alexa_proj.DataAccess",
-      "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\Alexa_proj.DataAccess.csproj",
+      "projectUniqueName": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\sloBo.DataAccess.csproj",
+      "projectName": "sloBo.DataAccess",
+      "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\sloBo.DataAccess.csproj",
       "packagesPath": "C:\\Users\\nonam\\.nuget\\packages\\",
       "outputPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\obj\\",
       "projectStyle": "PackageReference",

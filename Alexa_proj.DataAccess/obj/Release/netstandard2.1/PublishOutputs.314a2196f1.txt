@@ -1,5 +1,5 @@
-E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\Alexa_proj.DataAccess.dll
-E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\Alexa_proj.DataAccess.pdb
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\sloBo.DataAccess.dll
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\sloBo.DataAccess.pdb
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\Microsoft.Bcl.AsyncInterfaces.dll
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\Microsoft.CSharp.dll
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\Microsoft.Data.SqlClient.dll
@@ -82,4 +82,4 @@ E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\S
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\System.Xml.XDocument.dll
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\System.Xml.XmlDocument.dll
 E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\System.Xml.XmlSerializer.dll
-E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\Alexa_proj.DataAccess.deps.json
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Release\netstandard2.1\publish\sloBo.DataAccess.deps.json

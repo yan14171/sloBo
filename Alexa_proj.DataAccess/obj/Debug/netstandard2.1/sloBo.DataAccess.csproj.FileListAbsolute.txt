@@ -1,0 +1,9 @@
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Debug\netstandard2.1\sloBo.DataAccess.deps.json
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Debug\netstandard2.1\sloBo.DataAccess.dll
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\bin\Debug\netstandard2.1\sloBo.DataAccess.pdb
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\sloBo.DataAccess.csprojAssemblyReference.cache
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\sloBo.DataAccess.AssemblyInfoInputs.cache
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\sloBo.DataAccess.AssemblyInfo.cs
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\sloBo.DataAccess.csproj.CoreCompileInputs.cache
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\sloBo.DataAccess.dll
+E:\stuff\j\Alexa_proj\Alexa_proj.DataAccess\obj\Debug\netstandard2.1\sloBo.DataAccess.pdb

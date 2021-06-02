@@ -1,4 +1,4 @@
-E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.exe
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\sloBo.exe
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\appsettings.json
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\corona.wav
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Files\dog.wav
@@ -22,9 +22,9 @@ E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\Processing.txt
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\RecordingResults.txt
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Resources\Text\RecordingScreenMicrophone.txt
-E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.dll
-E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.runtimeconfig.json
-E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.pdb
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\sloBo.dll
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\sloBo.runtimeconfig.json
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\sloBo.pdb
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\IBM.Cloud.SDK.Core.dll
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\IBM.Watson.Common.dll
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\IBM.Watson.SpeechToText.v1.dll
@@ -83,8 +83,8 @@ E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\runtimes\
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.DataAccess.dll
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\DrawRectangle.dll
-E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.DataAccess.pdb
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\sloBo.DataAccess.dll
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\sloBo.DataAccess.pdb
 E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\DrawRectangle.pdb
-E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\Alexa_proj.deps.json
+E:\stuff\j\Alexa_proj\Alexa_proj\bin\Release\net5.0-windows7.0\publish\sloBo.deps.json

@@ -2763,44 +2763,6 @@
           "lib/netstandard1.1/System.Net.Http.Formatting.dll": {}
         }
       },
-      "Alexa_proj/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "dependencies": {
-          "Alexa_proj.DataAccess": "1.0.0",
-          "DrawRectangle": "1.0.0",
-          "IBM.Watson.SpeechToText.v1": "5.1.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "Microsoft.Extensions.Logging.Console": "5.0.0",
-          "NAudio": "2.0.0",
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "compile": {
-          "bin/placeholder/Alexa_proj.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Alexa_proj.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
-        ]
-      },
-      "Alexa_proj.DataAccess/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "Microsoft.Extensions.Logging.Console": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Alexa_proj.DataAccess.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Alexa_proj.DataAccess.dll": {}
-        }
-      },
       "DrawRectangle/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2809,6 +2771,41 @@
         },
         "runtime": {
           "bin/placeholder/DrawRectangle.dll": {}
+        }
+      },
+      "sloBo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DrawRectangle": "1.0.0",
+          "IBM.Watson.SpeechToText.v1": "5.1.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
+          "Microsoft.Extensions.Configuration.Json": "5.0.0",
+          "Microsoft.Extensions.Logging.Console": "5.0.0",
+          "NAudio": "2.0.0",
+          "Newtonsoft.Json": "13.0.1",
+          "sloBo.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/sloBo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/sloBo.dll": {}
+        }
+      },
+      "sloBo.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
+          "Microsoft.Extensions.Configuration.Json": "5.0.0",
+          "Microsoft.Extensions.Logging.Console": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/sloBo.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/sloBo.DataAccess.dll": {}
         }
       }
     }
@@ -9021,28 +9018,28 @@
         "wdc.system.net.http.formatting.netstandard.nuspec"
       ]
     },
-    "Alexa_proj/1.0.0": {
-      "type": "project",
-      "path": "../Alexa_proj/Alexa_proj.csproj",
-      "msbuildProject": "../Alexa_proj/Alexa_proj.csproj"
-    },
-    "Alexa_proj.DataAccess/1.0.0": {
-      "type": "project",
-      "path": "../Alexa_proj.DataAccess/Alexa_proj.DataAccess.csproj",
-      "msbuildProject": "../Alexa_proj.DataAccess/Alexa_proj.DataAccess.csproj"
-    },
     "DrawRectangle/1.0.0": {
       "type": "project",
       "path": "../DrawRectangle/DrawRectangle.csproj",
       "msbuildProject": "../DrawRectangle/DrawRectangle.csproj"
+    },
+    "sloBo/1.0.0": {
+      "type": "project",
+      "path": "../Alexa_proj/sloBo.csproj",
+      "msbuildProject": "../Alexa_proj/sloBo.csproj"
+    },
+    "sloBo.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../Alexa_proj.DataAccess/sloBo.DataAccess.csproj",
+      "msbuildProject": "../Alexa_proj.DataAccess/sloBo.DataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Alexa_proj >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "NUnit >= 3.12.0",
-      "NUnit3TestAdapter >= 3.16.1"
+      "NUnit3TestAdapter >= 3.16.1",
+      "sloBo >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9052,9 +9049,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.Tests\\Alexa_proj.Tests.csproj",
-      "projectName": "Alexa_proj.Tests",
-      "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.Tests\\Alexa_proj.Tests.csproj",
+      "projectUniqueName": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.Tests\\sloBo.Tests.csproj",
+      "projectName": "sloBo.Tests",
+      "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.Tests\\sloBo.Tests.csproj",
       "packagesPath": "C:\\Users\\nonam\\.nuget\\packages\\",
       "outputPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.Tests\\obj\\",
       "projectStyle": "PackageReference",
@@ -9077,8 +9074,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows7.0",
           "projectReferences": {
-            "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\Alexa_proj.csproj": {
-              "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\Alexa_proj.csproj"
+            "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\sloBo.csproj": {
+              "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\sloBo.csproj"
             }
           }
         }
@@ -9119,9 +9116,6 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WindowsForms": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"

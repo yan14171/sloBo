@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eEVdYOopOYkJ793S5Rke0pDIniwKqkcdDAgMw5kBl/44jN1EIFgp9APj9zQUpq/JeMlHzcZ0P/4CLbuzAlTQXQ==",
+  "dgSpecHash": "1kAVK5CUnKilK9AyslMmRvy/BdP6x59YzjQJ2psivVGpn5pBpolfMlLvy0ccsixGtj8Pn2Eu8MOR2AvSrtXRCA==",
   "success": true,
-  "projectFilePath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.Tests\\Alexa_proj.Tests.csproj",
+  "projectFilePath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.Tests\\sloBo.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nonam\\.nuget\\packages\\ibm.cloud.sdk.core\\1.2.0\\ibm.cloud.sdk.core.1.2.0.nupkg.sha512",
     "C:\\Users\\nonam\\.nuget\\packages\\ibm.watson.common\\5.1.0\\ibm.watson.common.5.1.0.nupkg.sha512",

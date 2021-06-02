@@ -2584,21 +2584,6 @@
           "lib/netstandard1.1/System.Net.Http.Formatting.dll": {}
         }
       },
-      "Alexa_proj.DataAccess/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
-          "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "Microsoft.Extensions.Logging.Console": "5.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Alexa_proj.DataAccess.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Alexa_proj.DataAccess.dll": {}
-        }
-      },
       "DrawRectangle/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2607,6 +2592,21 @@
         },
         "runtime": {
           "bin/placeholder/DrawRectangle.dll": {}
+        }
+      },
+      "sloBo.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.6",
+          "Microsoft.Extensions.Configuration.Json": "5.0.0",
+          "Microsoft.Extensions.Logging.Console": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/sloBo.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/sloBo.DataAccess.dll": {}
         }
       }
     }
@@ -8614,20 +8614,19 @@
         "wdc.system.net.http.formatting.netstandard.nuspec"
       ]
     },
-    "Alexa_proj.DataAccess/1.0.0": {
-      "type": "project",
-      "path": "../Alexa_proj.DataAccess/Alexa_proj.DataAccess.csproj",
-      "msbuildProject": "../Alexa_proj.DataAccess/Alexa_proj.DataAccess.csproj"
-    },
     "DrawRectangle/1.0.0": {
       "type": "project",
       "path": "../DrawRectangle/DrawRectangle.csproj",
       "msbuildProject": "../DrawRectangle/DrawRectangle.csproj"
+    },
+    "sloBo.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../Alexa_proj.DataAccess/sloBo.DataAccess.csproj",
+      "msbuildProject": "../Alexa_proj.DataAccess/sloBo.DataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Alexa_proj.DataAccess >= 1.0.0",
       "DrawRectangle >= 1.0.0",
       "IBM.Watson.SpeechToText.v1 >= 5.1.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.5",
@@ -8635,7 +8634,8 @@
       "Microsoft.Extensions.Configuration.Json >= 5.0.0",
       "Microsoft.Extensions.Logging.Console >= 5.0.0",
       "NAudio >= 2.0.0",
-      "Newtonsoft.Json >= 13.0.1"
+      "Newtonsoft.Json >= 13.0.1",
+      "sloBo.DataAccess >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8645,9 +8645,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\Alexa_proj.csproj",
-      "projectName": "Alexa_proj",
-      "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\Alexa_proj.csproj",
+      "projectUniqueName": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\sloBo.csproj",
+      "projectName": "sloBo",
+      "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\sloBo.csproj",
       "packagesPath": "C:\\Users\\nonam\\.nuget\\packages\\",
       "outputPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj\\obj\\",
       "projectStyle": "PackageReference",
@@ -8670,8 +8670,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows7.0",
           "projectReferences": {
-            "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\Alexa_proj.DataAccess.csproj": {
-              "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\Alexa_proj.DataAccess.csproj"
+            "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\sloBo.DataAccess.csproj": {
+              "projectPath": "E:\\stuff\\j\\Alexa_proj\\Alexa_proj.DataAccess\\sloBo.DataAccess.csproj"
             },
             "E:\\stuff\\j\\Alexa_proj\\DrawRectangle\\DrawRectangle.csproj": {
               "projectPath": "E:\\stuff\\j\\Alexa_proj\\DrawRectangle\\DrawRectangle.csproj"
@@ -8733,9 +8733,6 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WindowsForms": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"

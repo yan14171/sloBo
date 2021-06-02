@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Net.Http;
 using System.Threading.Tasks;
 
+
 namespace Alexa_proj.Data_Control.Models
 {
 #nullable enable
@@ -43,10 +44,16 @@ namespace Alexa_proj.Data_Control.Models
 
         public async virtual Task<T> GetInfo<T> () where T : class
         {
+            T Report;
+
             var client = new HttpClient();
-            var response =
-                await client.GetAsync(this.ExecutableFunction.FunctionEndpoint);
-            T Report = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+            try
+            {
+                var response =
+                    await client.GetAsync(this.ExecutableFunction.FunctionEndpoint);
+                Report = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+            }
+            catch { return null; }
             return Report;
         }
     }
